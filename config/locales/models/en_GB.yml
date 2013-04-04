@@ -1,0 +1,44 @@
+en_GB:
+  #social approved
+  social_approved_message: "Check out my moves! My video was just accepted in the Dance Central 3 Dance Off. Watch me battle it out and vote for me to win!dc3danceoff.com"
+  social_approved_description: "dance moves were just accepted into the Dance Central 3 Dance Off. Think you have what it takes? Upload a battle of your own!!"
+  social_approved_name: "ESRB Rating: TEEN (Lyrics, Suggestive Themes)"
+
+  activemodel:
+    attributes:
+      locale:
+        en_US: "United States"
+        en_GB: "Great Britan"
+        fr_FR: "France"
+        en_IN: "India"
+  activerecord:
+    models:
+      user: User
+      video: Video
+    attributes:
+      video:
+        title: "Title"
+        user_id: "User ID"
+        status: "Status"
+        votes_count: "Votes Count"
+        track_id: "Track ID"
+        video_id: "Video ID"
+        message: "Check out my moves! My video was just accepted in the Dance Central 3 Dance Off. Watch me battle it out and vote for me to win!"
+        message_create: "just submitted their video to the Dance Central 3 Dance Off! dc3danceoff.com"
+        name: "DANCE CENTRAL 3 DANCE OFF"
+        description: "dance moves were just accepted into the Dance Central 3 Dance Off. Think you have what it takes? Upload a battle of your own!!"
+        description_create: "Got the moves to step up and battle with the best?  Submit a video of your best Dance Central routine for a chance to win prizes in the Dance Central 3 Dance Off!"
+        caption: "ESRB Rating: TEEN (Lyrics, Suggestive Themes)"
+      user:
+        name_first: "First Name"
+        name_last: "Last Name"
+        email: "Email"
+        fb_id: "Facebook ID"
+        username: "User Name"
+        banned: "Banned"
+    errors:
+      template:
+        header:
+          one:  "1 error prohibited this %{model} from being saved"
+          other: "%{count} errors prohibited this %{model} from being saved"
+        body:  "There were problems with the following fields:"

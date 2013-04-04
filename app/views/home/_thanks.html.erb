@@ -1,0 +1,40 @@
+<div class="thanks-message">
+  <aside class="wiz-left">
+    <h1><%= t :thanks_title %></h1>
+    <p><%= t :thanks_text %></p>
+
+    <div class="thx-social-btns">
+      <a href="#" onclick='postToFeedApp(); return false;' class="share-btns fb-btn"><%= t :share_text %></a>
+      <a href="//twitter.com/intent/tweet?text=<%= t :twitter_copy %>%20&lt;http://bit.ly.com&gt;" class="share-btns tw-btn"><%= t :share_text %></a>
+    </div>
+    <a href="/" class="thx-btns"><%= t :thanks_return_home %></a>
+  </aside>
+
+  <aside class="wiz-right">
+    <div id="thanksTarget"></div>
+    <script type="text/javascript">
+      jwplayer('thanksTarget').setup({
+        'flashplayer': '/player/player.swf',
+        'id': 'thanksVid',
+        'class': 'thanksVid',
+        'width': '480',
+        'height': '270',
+        'allowFullscreen': false,
+        'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/',
+        'file': 'usher-submission-thanks.flv',
+        'autostart': 'true',
+        //'image': 'http://emgklovf.rtmphost.com/http/thumbnail_play/thumbplay_4702118931945570673.png',
+        'skin': '/player/skins/glow.zip'
+      });
+    </script>    
+    <!--
+    <object id="thanksplayer" type="application/x-shockwave-flash" data="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120924181951/InfluxisPlayer.swf" width="480" height="270">
+      <param name="movie" value="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120924181951/InfluxisPlayer.swf"></param>
+      <param name="allowFullScreen" value="true"></param>
+      <param name="allowScriptAccess" value="always"></param>
+      <param name="wmode" value="opaque"></param>
+      <param name="flashvars" value="RTMP=rtmp://<%=INFLUXIS_BASE%>dc3&file=usher-submission-thanks.flv&noServerDetect=true&availableControls=play,seek,volume&controls=auto&controlsPosition=bottom&volume=80&mute=false&autoPlay=true&aspect=letterbox&logo=&logoPosition=bottomLeft&logoScale=100&buffer=5&useDualBuffer=true&allowJSControl=true"></param>
+    </object>
+    -->
+  </aside>
+</div>

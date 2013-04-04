@@ -1,0 +1,7 @@
+<div class="denied-camera">
+  <h1><%= t :deniedcamera_title %></h1>
+  <p><%= t :deniedcamera_text %></p>
+  <%= link_to "#{t :deniedcamera_again}", {:controller => "webcam", :action => "new"}, :class => 'primary-btn rec-btn-icon-wiz', :style => 'left:370px' %>
+
+  <a href="#" onclick="initReset();" style="display:none;"><%= t :deniedcamera_again %></a>
+</div>

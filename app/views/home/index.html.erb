@@ -1,0 +1,107 @@
+<div class="inner-wrapper">
+  <div id="vid-nav-holder">
+    <div class="vid-nav left">
+      <%= link_to (t :reload), home_reloadbattle_path(:format => 'js'), :remote => true, :class => 'reload_action_left', :disable_with => "#{t :reloading}" %>
+    </div>
+    <div class="vid-nav right">
+      <%= link_to (t :reload), home_reloadbattle_path(:format => 'js'), :remote => true, :class => 'reload_action', :disable_with => "#{t :reloading}" %>
+    </div>
+  </div>
+  <div id="load_battle">
+    <%=render :partial => "shared/videobattle", :locals => { :videos => @battle,:flag => false  } %>
+  </div>
+
+  
+
+  
+
+  <h1 class="choose-dancer-title"><%= t :list_title %></h1>
+<div style="clear:both;" id="error"></div>
+</div>
+
+
+<div id="tab-area">
+  <div class="inner-wrapper">
+    <!-- Tabs -->
+    <ul class="tabs">
+      <li><a href="#"><%=t :popular_videos %></a></li>
+      <% if @list_winner.count > 0 %>
+      <li><a href="#"><%=t :winners_videos %></a></li>
+      <% end %>
+      <li><a href="#"><%=t :newest_videos %></a></li>
+      <li class="auth"><%= link_to "#{t :your_videos}", home_ajaxmyvideos_path(:format => 'js'), :remote => true, :class => 'reload_action', :disable_with => "#{t :reloading}" %></li>
+      <li class="auth"><%= link_to "#{t :friend_videos}", home_ajaxfreindvideos_path(:format => 'js'), :remote => true, :class => 'reload_action', :disable_with => "#{t :reloading}" %></li>
+    </ul>
+
+
+    </ul>
+    <a href="/home/createvideo" class="tabs-rym"><%= t :auth_record_moves %></a>
+
+    <!-- Tab content -->
+    <div class="panes">
+      <!-- Most Popular -->
+      <div>
+        <div class="video-list scrollable vertical">
+          <div class="items">
+          <% @list_popular.each_slice(12) do |video| -%>
+            <div>
+              <% video.each do |video| -%>
+                <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+              <% end -%>
+            </div>
+          <%end -%>
+          </div>
+        </div> 
+        <a href="#" class="load-down next"></a>
+        <a href="#" class="load-up prev"></a>
+      </div>
+
+      <% if @is_winner.count > 0 %>
+      <!-- Winners -->
+      <div>
+        <div class="video-list scrollable vertical">
+          <div class="items">
+          <% @list_winner.each_slice(12) do |video| -%>
+            <div>
+              <% video.each do |video| -%>
+                <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+              <% end -%>
+            </div>
+          <%end -%>
+          </div>
+        </div> 
+        <a href="#" class="load-down next"></a>
+        <a href="#" class="load-up prev"></a>
+      </div>
+      <% end %>
+
+      <!-- Newest -->
+      <div> 
+        <div class="video-list scrollable vertical">
+          <div class="items">
+            <% @list_latest.each_slice(12) do |vid| -%>
+              <div>
+                <% vid.each do |v| %>
+                  <%=render :partial => "shared/videoblock", :locals => { :video => v }%>
+                <% end -%>
+              </div>
+            <% end -%>
+          </div>
+        </div> 
+        <a href="#" class="load-down next"></a>
+        <a href="#" class="load-up prev"></a>  
+      </div>
+
+      <!-- Your Videos -->
+      <div id="ajaxmyvideos">
+        
+      </div>
+
+      <!-- Friend's Videos -->
+      <div id="ajaxfriendvideos">
+
+      </div>
+
+    </div>
+  </div>
+</div> <!-- END Tab area -->

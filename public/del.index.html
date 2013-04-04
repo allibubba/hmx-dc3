@@ -1,0 +1,202 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dance off side by side example</title>
+    
+    
+    <style>
+      /* always define a default */
+      video {
+        display: block;
+      }
+      
+      video {
+        width: 510px;
+        height: 280px;
+      }
+      /* always define */
+      .timeline-slider,
+      .volume-slider,
+      .progressbar {
+        position: relative;
+        zoom: 1;
+      }
+      .ui-slider-horizontal .ui-slider-handle,
+      .ui-progressbar-value {
+        position: absolute;
+        display: block;
+        min-width: 1px;
+        min-height: 1px;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+      
+
+      .play-pause {
+        display: block;
+        width: 50px;
+        height: 50px;
+        outline: none;
+      }
+
+      .play-pause .button-text {
+      }
+
+      .play-pause .ui-icon-play {
+        display: block;
+        border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  
+  border-left: 20px solid green;
+      }
+      .play-pause .ui-icon-pause {
+        display: block;
+        width: 50px; 
+        height: 50px; 
+        background: red;
+      }
+
+
+      /* simple style */
+      .timeline-slider,
+      .volume-slider,
+      .progressbar {
+        margin: 10px 0;
+        height: 22px;
+        background: #eee;
+      }
+      .ui-slider-disabled {
+        opacity: 0.8;
+      }
+      .ui-slider-disabled .ui-slider-handle {
+        cursor: default;
+      }
+      .ui-slider-horizontal .ui-slider-handle,
+      .ui-progressbar-value {
+        background: #333;
+      }
+      .ui-slider-horizontal .ui-slider-handle {
+        margin-left: -3px;
+        width: 5px;
+      }
+      .media-state {
+        margin: 10px 0;
+        height: 22px;
+        /* default color + preload loader gif */
+        background: #eee url(/loader.gif) no-repeat -9999px -999px;
+      }
+      .media-state.waiting {
+        background-position: center;
+      }
+      .media-state.idle {
+        background-color: #999;
+      }
+      .media-state.playing {
+        background-color: #99e;
+      }
+      .media-state.totalerror {
+        background-color: #99e;
+      }
+    </style>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js"></script>
+        
+    <!-- full jme script -->
+    <!-- configure path to swf-fallback: script.jwPlayer[src] -->
+    <script class="jwPlayer" type="application/swf" src="/player.swf"></script>
+        <script src="/mm.full.min.js"></script>
+    <!-- END: jme -->
+    
+    <script>
+      $('html').addClass('js-on');
+      $(function(){
+        $('div.media-player').jmeControl().bind('play', function(){
+          $('video, audio').play();
+        }).bind('pause', function(){
+          $('video, audio').pause();
+        })
+      $('video').muted(true);
+
+      });
+    </script>
+    
+  </head>
+  <body>
+
+
+<div class="media-player" style="text-aling:center;width:40%;float:left;margin-right:5px;">
+
+  <video poster="/dance1.jpg" controls="controls" preload="none">
+  <source src="/videos/dance1.mp4" type="video/mp4" />
+  <source src="/videos/dance1.ogv" />
+  </video>
+
+  <div class="media-player" style="width:40%;float:left;margin:10px">
+    <div class="media-controls">
+      <a class="play-pause"><span class="ui-icon"> </span><span class="button-text">play / pause</span></a>
+    </div>
+  </div>
+
+</div>
+
+<div class="media-player" style="text-aling:center;width:40%;float:left;">
+  <video poster="/dance2.jpg" controls="controls" preload="none">
+  <source src="/videos/dance2.mp4" type="video/mp4" />
+  <source src="/videos/dance2.ogv" />
+  </video>
+</div>
+  
+
+
+
+    
+
+
+
+    
+    <div class="media-player" style="display:none;">
+      
+      <audio controls="controls">
+        <source src="/tracks/OMG.mp3" type="audio/mpeg" />
+        <source src="tracks/OMG.ogg" type="audio/ogg" />
+      </audio>
+      
+      <span class="media-label">audioplayer</span>
+      <div class="media-controls">
+        <a class="play-pause"><span class="ui-icon"> </span><span class="button-text">play / pause</span></a>
+        <span class="current-time player-display">00:00</span>
+        <div class="timeline-slider">
+          <span class="handle-label">play position</span>
+          <div class="progressbar"></div>
+        </div>
+        <span class="duration player-display">00:00</span>
+        <a class="mute-unmute"><span class="ui-icon"> </span><span class="button-text">mute / unmute</span></a>
+        <div class="volume-slider"><span class="handle-label">volume control</span></div>
+      </div>
+    </div>
+    
+
+
+
+
+<!--[if IE]>
+    <script>
+      if(location.protocol === 'file:'){
+        $('<small class="flash-hint">Note that you have to <a href="http://www.macromedia.com/support/documentation/en/flashplayer/help/settings_manager04.html">add your development directory to the local trusted security sandbox</a>, to get the controls work with the flash backend</small>')
+          .css({opacity: 0})
+          .insertAfter('div.media-player')
+          .fadeTo(1000, 1)
+          .delay(3000)
+          .fadeOut(400, function(){
+            $(this).remove();
+          })
+        ;
+      }
+    </script>
+<![endif]-->
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<div class="inner-wrapper">
+  <section role="wizard-bg">
+    <a href="/" class="go-back-btn"><%= t :return_to_the_dance_off %></a>
+    <h1><%= t :submission_start_title %></h1>
+    <p class="non-auth"><span><%= t :submission_start_caption_auth %></span><span><%= t :submission_start_caption %></span></p>
+    <p class="auth"><%= t :submission_start_caption_auth %></p>
+
+    <!-- show buttons -->
+    <div class="federal-regulations" style="margin:0 auto;padding:15px 0 0 0;text-align:center;">
+      <input id="confirmation" name="rules-regs" value="yes" type="checkbox" />
+      <label>
+        <%= t :submit_regulations_a %> <a style="text-decoration:underline" target="_blank" href="/contest/legal_<%= Locale.all[I18n.locale.to_sym][:code] %>.pdf"><%= t :submit_regulations_b %></a> <%= t :submit_regulations_c %>
+      </label>
+    </div>
+
+    <div class="cta-btns">
+      <div class="non-auth" style="position:relative;">
+        <a href="#" class="disabled auth-loginlink primary-btn rec-btn-icon-wiz" data-redirect="/webcam/new"><%= t :submit_webcam %></a>
+
+        <span class="or-text"><%= t :or %></span>
+
+        <a href="#" class="disabled auth-loginlink primary-btn upload-btn-icon-wiz" data-redirect="/videos/new"><%= t :submit_file %></a>
+        <div class="btnMask" style="position:absolute;height:60px;width:750px;"></div>
+      </div>
+
+      <div class="auth" style="position:relative;">
+        <%= link_to "#{t :submit_webcam}", {:controller => "webcam", :action => "new"}, :class => 'disabled primary-btn rec-btn-icon-wiz' %>
+        <span class="or-text"><%= t :or %></span>
+        <%= link_to "#{t :submit_file}", {:controller => "videos", :action => "new"}, :class => 'disabled primary-btn upload-btn-icon-wiz' %>
+        <div class="btnMask" style="position:absolute;height:60px;width:750px;"></div>
+      </div>
+    </div>
+
+  </section>
+</div>
+
+<script type="text/javascript">
+function enableOptions(flag){
+  console.log(flag)
+  if(flag === true){
+    //$('.cta-btns').fadeIn('fast');
+    $('.cta-btns').fadeTo('fast',1);
+    $('.btnMask').each(function(i, el){
+      $(el).fadeOut();
+    });
+  }else{
+    $('.cta-btns').fadeTo('fast',.5);
+    $('.btnMask').each(function(i, el){
+      $(el).fadeIn();
+    });    
+  }
+  
+}
+$(function(){
+  $('.cta-btns').fadeTo('fast',.5);
+  var trigger = $('#confirmation')
+  trigger.click(function(event){
+    if(event.target.checked === true){
+      //console.log('enable')
+      enableOptions(true);
+    }else{
+      //console.log('disable')
+      enableOptions(false);
+    }
+  })
+})
+</script>
+
+<%if session[:locale] %>
+  <%=render :partial => "locale/prizes_#{session[:locale]}"%>
+<%else %>
+  <%=render :partial => "locale/prizes_en_US"%>
+<%end %>

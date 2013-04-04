@@ -1,0 +1,38 @@
+<style type="text/css">
+  .fb-like span{padding:1px 0 0 2px;}
+</style>
+<!-- <a class="fb-icon" onclick='postToFeedApp(); return false;'><%= t :facebook %></a> -->
+
+<script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
+<a onclick='postToTwitterApp(); return false;' href="//twitter.com/intent/tweet?lang=<%= Locale.all[I18n.locale.to_sym][:short] %>&text=<%= t :twitter_copy %>&hashtags=<%= t :twitter_hash %>&url=<%=BITLY%>"  class="t-icon"><%= t :twitter %></a>
+
+<div style="float:right;" class="fb-like" data-href="https://dc3danceoff.com" data-send="false" data-layout="button_count" data-width="86" data-show-faces="true" data-font="arial"></div>
+
+
+
+<script>
+  function postToFeedApp() {
+    // calling the API ...
+    var obj = {
+      method: 'feed',
+      link: '<%=BASE_URL%>',
+      picture: '<%=BASE_URL%>/img/battle_90x90.jpg',
+      name: '<%= t :facebook_title %>',
+      caption: '<%= t :facebook_caption %>',
+      description: '<%= t :facebook_description %>'
+    };
+    function callback(response) {
+      _gaq.push(['_trackEvent', 'App Share', 'Facebook Complete']);
+      //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+    }
+    _gaq.push(['_trackEvent', 'App Share', 'Facebook Intent']);
+    FB.ui(obj, callback);
+  }
+
+  function postToTwitterApp() {
+    _gaq.push(['_trackEvent', 'App Share', 'Twitter Intent']);
+    window.tweet_callback = function() {
+      _gaq.push(['_trackEvent', 'App Share', 'Twitter Complete']);
+    };
+  }
+</script>

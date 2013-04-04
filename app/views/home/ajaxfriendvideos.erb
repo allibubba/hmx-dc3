@@ -1,0 +1,10 @@
+$("#ajaxfriendvideos").html("<%= escape_javascript(render   :partial => 'shared/videolist',     :layout => false, :locals => { :videos => @friendvideos, :flag => false })%>");
+
+
+$('.img-overlay').hide();
+  $('.imhover').mouseover(function(){
+    $(this).find('.img-overlay').show();
+
+  }).mouseout(function(){
+    $(this).find('.img-overlay').hide();
+  });

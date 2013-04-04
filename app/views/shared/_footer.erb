@@ -1,0 +1,41 @@
+ <footer>
+  <div class="inner-wrapper">
+
+    <ul class="logos">
+      
+    <% if session[:locale] %>
+      <%=render :partial => "locale/rating_#{session[:locale]}"%>
+
+    <% else %>
+      <%=render :partial => "locale/rating_en_US"%>
+    <% end %>
+
+      <li><a target="_blank" href="http://www.harmonixmusic.com/" class="harmonix-icon">Harmonix</a></li>
+      <li><a target="_blank" href="http://www.xbox.com" class="xbox-icon">Xbox</a></li>
+      <li><a target="_blank" href="http://www.xbox.com/live" class="xboxlive-icon">Xbox Live</a></li>
+      <li><a target="_blank" href="http://www.xbox.com/<%= Locale.all[I18n.locale.to_sym][:altcode] %>/KINECT" class="kinect-icon">Kinect</a></li>
+      <li><a target="_blank" href="http://www.microsoft.com/<%= Locale.all[I18n.locale.to_sym][:altcode] %>/default.aspx" class="microsoft-icon" target="_blank">microsoft</a></li>
+    </ul>
+
+    <p class="copyright">&copy; <%=t :legal_copy %></p>
+
+  <div id="nav-wrapper">
+    <nav role="footer">
+      <!-- <a class="rules_link" href="/info/rules"><%=t :rules%></a> -->
+      <a class="rules_link" target="_blank" href="/contest/legal_<%= Locale.all[I18n.locale.to_sym][:code] %>.pdf"><%=t :rules%></a>
+      <a clas="faq_link" href="/info/faq"><%=t :faq%></a>
+      <a clas="privacy_link" href="http://privacy.microsoft.com/<%= Locale.all[I18n.locale.to_sym][:altcode] %>/default.mspx" target="_blank"><%=t :privacy%></a>
+      <a clas="terms_link" href="/info/terms"><%=t :terms%></a>
+    </nav>
+    <div id="lang-select">
+      <%=render :partial => "shared/locale"%>
+    </div>
+  </div>
+
+  </div>
+ </footer>
+
+  
+  
+  
+  

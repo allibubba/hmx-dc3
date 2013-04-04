@@ -1,0 +1,32 @@
+<%
+      if video.status == 'approved'
+        link_to 'Deny', deny_admin_video_path(video)
+      else
+        link_to 'Approve', approve_admin_video_path(video)
+      end
+%>
+    <style>
+      #infxplayer{border:10px solid #ccc;margin:2px;}
+    </style>
+    <div id="editVidTarget"></div>
+    <script type="text/javascript">
+      jwplayer('editVidTarget').setup({
+        'flashplayer': '/player/player.swf',
+        'id': 'playerID',
+        'width': '480',
+        'height': '360',
+        'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/recorder/streams/_definst_/',
+        'file': '<%=@video.media_id %>',
+        'autostart': 'true',
+        //'image': 'http://emgklovf.rtmphost.com/http/thumbnail_play/thumbplay_4702118931945570673.png',
+        'skin': '/player/skins/glow.zip'
+      });
+    </script> 
+<!--
+<object id="infxplayer" type="application/x-shockwave-flash" data="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120827135830/InfluxisPlayer.swf" width="480" height="360">
+  <param name="movie" value="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120827135830/InfluxisPlayer.swf"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowScriptAccess" value="always"></param>
+  <param name="flashvars" value="RTMP=rtmp://<%=INFLUXIS_BASE%>recorder&file=<%=video.media_id %>.flv&noServerDetect=true&availableControls=play,stop,rewind,seek,time,duration,volume,fullscreen&controls=on&controlsPosition=bottom&volume=80&mute=false&autoPlay=true&aspect=letterbox&logo=&logoPosition=bottomLeft&logoScale=100&buffer=5&useDualBuffer=true"></param>
+</object>
+-->

@@ -1,0 +1,19 @@
+<h3><%= video.title %> | <span><%= video.id %></span></h3>
+
+
+<object id="infxplayer" type="application/x-shockwave-flash" data="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120828133833/InfluxisPlayer.swf" width="480" height="360">
+  <param name="movie" value="http://infxapps.influxis.com/apps/ftn53bqfw7wch7owotk0/InfluxisPlayer_20120828133833/InfluxisPlayer.swf"></param>
+  <param name="allowFullScreen" value="true"></param>
+  <param name="allowScriptAccess" value="always"></param>
+  <param name="flashvars" value="RTMP=rtmp://<%=INFLUXIS_BASE%>recorder&file=<%=video.media_id%>.flv&noServerDetect=true&availableControls=play,stop,rewind,seek,time,duration,volume,fullscreen&controls=off&controlsPosition=bottom&volume=80&mute=true&autoPlay=false&aspect=letterbox&logo=&logoPosition=bottomLeft&logoScale=100&buffer=5&useDualBuffer=true"></param>
+</object>    
+
+    <%=
+    link_to "#{t :vote}", 
+    video_vote_path(video.id,:format => :json), 
+    {
+      :remote => true, 
+      :class => 'remote_action', 
+      :disable_with => "#{t :voting}"
+    }
+  %>

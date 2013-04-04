@@ -1,0 +1,55 @@
+
+
+<% if @user && ! @user.banned%>
+  
+  <%=render :partial => "shared/select_track"%>
+  <div id="target">
+  </div>
+
+<%elsif @user && @user.banned%>
+      <h4>you have been banned from uploading videos</h4>
+<%else%>
+  <%=render :partial => "shared/auth"%>
+<%end%>
+
+
+<%=render :partial => "shared/battles_cta"%>
+
+<script type="text/javascript">
+  var track = $('.track');
+  //console.log('***** ',$('.track'));
+  var next_url = "/webcam/recorder/"
+  
+  function initReset(){
+    //console.log('INITreset called');
+      $('#trackSelection').css({height: 422,pading:10,display:'block'});
+      //$('#playerContainer').css({display:'none'});
+      $('#playerContainer').remove();
+  }
+
+  $(function(){
+    
+
+    $(track[0]).trigger('click');
+    // next
+    $('.next').click(function(e){
+      e.preventDefault();
+      //document.getElementById('movesPlayer').setContentPath('done');
+      jwplayer('videoPlayerContainer').stop();
+
+      $.ajax({
+        type: 'GET',
+        beforeSend: function(xhr,settings){
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+        },
+        url: next_url+settings.track,
+        complete: function(data){
+          //console.log('complete',data);
+          $('#trackSelection').css({display:'none'});
+          $('#trackSelection').after(data.responseText);
+          $('#playerContainer').css({height: 422,pading:10});
+        }
+      });
+    });  
+  })
+</script>

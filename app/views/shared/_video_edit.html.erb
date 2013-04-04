@@ -1,0 +1,45 @@
+  <%= semantic_form_for [:admin, @video] do |f| %>
+    <%=f.inputs "Details" do %>
+      <%= f.input :video_type %>
+      <%= f.input :status,  :as => :select, :collection => ['approved','denied','pending'] %>
+    <% end %>
+    <%=f.inputs "Winner" do %>
+
+      <%= f.input :winner,  :as => :select, :collection => {"NO" => 0,"Grand" => 1, "Second Place" => 2, "Third Place" => 3} %>
+    <% end %>
+    <%=f.inputs "Youtube" do %>
+      <div style="padding:8px 12px;">
+        <p>Youtube instructions, you must <a href="http://emgklovf.rtmphost.com/recorder/streams/_definst_/<%=@video.media_id%>.flv">Download</a> the stream file, it will take a bit of time, it will be downloaded via your browser, <br />and saved locally as a flv, upload this file to YouTube, and paste in the YouTube link in the space below.<br />URL should look similar to this: <strong>http://www.youtube.com/watch?v=wcLNteez3c4</strong></p>
+      </div>
+      <%= f.input :youtube_url, :required => true %>
+    <% end %>
+
+    <%=f.inputs "Images" do %>
+      <div style="padding:10px;height:130px">
+        <div style="float:left;margin-right:20px;">
+          <p>application thumb</p>
+          <img src="<%=INFLUXIS_IMAGE%>thumbnail_app/thumbapp_<%=@video.media_id%>.png" />
+        </div>
+        <div style="float:left;margin-right:20px;">
+          <p>facebook approved thumb</p>
+          <img src="<%=INFLUXIS_IMAGE%>thumbnail_play/thumbplay_<%=@video.media_id%>.png" />
+        </div>
+      </div>
+    <% end %>
+    <div id="editVidTarget"></div>
+    <script type="text/javascript">
+      jwplayer('editVidTarget').setup({
+        'flashplayer': '/player/player.swf',
+        'id': 'playerID',
+        'width': '480',
+        'height': '360',
+        'mute': true,
+        'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/recorder/streams/_definst_/',
+        'file': '<%=@video.media_id %>',
+        'autostart': 'true',
+        //'image': 'http://emgklovf.rtmphost.com/http/thumbnail_play/thumbplay_4702118931945570673.png',
+        'skin': '/player/skins/glow.zip'
+      });
+    </script>    
+     <%= f.buttons %>
+  <% end %>

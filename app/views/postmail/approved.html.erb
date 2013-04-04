@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    
+    <h3><%= t :email_hello %> <%=@video.user.name_first%></h3>
+    
+    <p><%= t :email_copy_approved_a %></p>
+    <p><%= t :email_copy_approved_b %></p>
+
+    <a href="<%=BASE_URL%>/vid/<%=@video.id%>"><%=BASE_URL%>/vid/<%=@video.id%></a>
+    
+    <p><%= t :email_legal %></p>
+    <a href="<%=BASE_URL%>/info/terms"><%= t :email_link_terms %></a>
+    <a href="http://privacy.microsoft.com/en-us/default.mspx"><%= t :email_link_privacy %></a>
+    
+    <p><%= t :email_link_footer %></p>
+
+  </body>
+</html>

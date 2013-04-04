@@ -1,0 +1,4 @@
+<% Locale.all.each do |local| %>
+    <a href="/home/locale/<%= local[1][:code] %>" class="<%= local[1][:code] %> <% if session[:locale] == local[1][:code] %>active<% else %><% end %>"><%= local[1][:label] %></a>
+<% end %>
+

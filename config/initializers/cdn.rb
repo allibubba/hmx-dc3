@@ -1,0 +1,1 @@
+CDN_URL = 'https://s3.amazonaws.com/dc3-encoded-stage/'

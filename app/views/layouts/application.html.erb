@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html id="<%= session[:locale] %>">
+<head>
+  <!-- meta -->
+  <title>DC3 | <%= t :meta_title %></title>
+  <meta name="description" content="<%= t :facebook_description %> <%= t :facebook_caption %>" />
+  <meta name="google" content="notranslate" />
+
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+
+  <!--[if lt IE 9]>
+  <script src="https://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+  <%= stylesheet_link_tag "ie8", :media => "all" %>
+  <![endif]-->
+
+  <!-- js -->
+  <script>
+    var _gaq = _gaq || []; //make sure i can set tracking event before google loads
+  </script>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "//www.youtube.com/iframe_api" %>
+  <%= javascript_include_tag "uniform" %>
+
+
+
+  <%= csrf_meta_tags %>
+  <meta property="og:title" content="<%= t :facebook_title %>" />
+  <meta property="og:image" content="<%=BASE_URL%>img/battle_90x90.jpg" />
+  <meta property="og:url" content="<%=BASE_URL%>" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="<%= t :facebook_title %>"/>
+  <meta property="og:description" content="<%= t :facebook_description %> <%= t :facebook_caption %>" />
+
+</head>
+<body>
+<div id="app-wrapper" class="reg">
+  <div id="page-wrapper">
+
+  <%=render :partial => "shared/header"%>
+
+  <%= yield %>
+
+  <!-- FBUK! -->
+  <div id="fb-root"></div>
+
+  <script>
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/<%=I18n.locale%>/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+
+    //google analytics
+    // var _gaq = _gaq || []; //i put this in the head
+    _gaq.push(['_setAccount', 'UA-35532087-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      //ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      ga.src = 'https://ssl.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+
+    var CLIENT_ID = '<%=CLIENT_ID%>'
+    var vote_win = '<%=t :vote_win %>'
+    var vote_lose = '<%=t :vote_lose%>'
+    
+  </script>
+
+  <%=render :partial => "shared/promo"%>
+
+  <%=render :partial => "shared/footer"%>
+
+  </div>
+</div>
+<%= javascript_include_tag "animations" %>
+</body>
+</html>

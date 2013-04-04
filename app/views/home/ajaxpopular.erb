@@ -1,0 +1,1 @@
+$("#ajaxpopular").html("<%= escape_javascript(render   :partial => 'shared/videolist',     :layout => false, :locals => { :videos => @popular, :flag => false })%>");

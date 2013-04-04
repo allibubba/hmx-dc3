@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DC3 MOBILE</title>
+  <meta name="viewport" content="width=device-width, maximum-scale=1.0">
+  <%= stylesheet_link_tag    "tablet", :media => "all" %>
+  <%= javascript_include_tag "mobile" %>
+
+  <!-- jQuery -->
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js' %>
+  <!-- /jQuery -->
+  <%= javascript_include_tag "//www.youtube.com/iframe_api" %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+
+  <script>
+    (function(d){
+       var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+       if (d.getElementById(id)) {return;}
+       js = d.createElement('script'); js.id = id; js.async = true;
+       js.src = "//connect.facebook.net/<%=I18n.locale%>/all.js";
+       ref.parentNode.insertBefore(js, ref);
+     }(document));
+    var CLIENT_ID = '<%=CLIENT_ID%>'
+  </script>
+<%= yield %>
+
+</body>
+</html>

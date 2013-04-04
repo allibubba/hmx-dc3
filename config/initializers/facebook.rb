@@ -1,0 +1,3 @@
+# CLIENT_ID = '151259104968742'
+# CLIENT_SECRET = '2e783d93aefa6581e923a62c6054abac'
+# CALLBACK_URL = 'http://10.1.10.249:3000/oauth/callback'

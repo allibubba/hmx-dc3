@@ -1,0 +1,85 @@
+#fr_FR {
+
+// Buttons
+.primary-btn { width: 235px; }
+.primary-btn.rec-btn-icon { padding-left: 40px; width: 250px;}
+.media-controls #endMenu .share-btns { width: 235px; }
+.primary-btn.rec-btn-icon-wiz, .primary-btn.upload-btn-icon-wiz { padding-left: 40px; }
+
+
+// Tabs - vide tabs
+.choose-dancer-title::before { left: 100px; }
+.choose-dancer-title::after { right: 100px; }
+.tabs-rym { width: 226px; }
+
+
+// Prizes
+section[role="prizes"] {
+  aside{
+    padding: 60px 10px 15px 220px;
+    text-align: left;
+    width: 220px;
+    &> p {
+      padding: 0;
+    }
+  }
+  .prize-two, .prize-three {
+    background-position: left;
+  }
+  .prize-three {
+    padding-left: 240px;
+  }
+}
+
+
+// Record Webcam Wizard
+#trackSelection .wiz-left { padding-top: 40px; }
+#trackSelection .wiz-left .track { padding: 10px 0 10px 35px; }
+#playerContainer .player #rec {
+  position: absolute;
+  bottom: 190px;
+  left: 240px;
+  cursor: pointer;
+  z-index: 2;
+  width: 370px;
+  padding-left: 50px;
+}
+#playerContainer .player #vidMenu { left: 300px; }
+#playerContainer .player #vidMenu .rec-btn-icon, #playerContainer .player #vidMenu .play-btn-icon, #playerContainer .player #vidMenu .music-btn-icon { width: 270px; }
+#playerContainer .player #vidMenu .submit-btn { left: 70px; }
+
+
+// File Upload Wizard
+.file-upload-form .submit-btn { width: 130px !important; }
+
+// Thanks Message
+.thanks-message .thx-btns { padding: 15px 0 15px 40px; }
+.thanks-message .share-btns { width: 100px; }
+.thanks-message .wiz-left > p { font-size: 15px; }
+// Promo Area
+.buy-game .buy-game-btns .buy-game-btn:first-child { padding-top: 13px; }
+
+
+// Footer 
+#nav-wrapper { width: 600px; }
+footer .logos { padding-top: 35px; }
+
+}
+
+// ==========================================================================
+// ★ Promo Section
+// ==========================================================================
+.smartglass {
+  .game-art {
+    background: url(game-art-box_fr.png) no-repeat;
+  }
+} 
+
+// ==========================================================================
+// ★ Prizes Section
+// ==========================================================================
+section[role="prizes"] {
+  .prize-three {
+    background: url(prize-three_fr.png) no-repeat center top;
+  }
+}

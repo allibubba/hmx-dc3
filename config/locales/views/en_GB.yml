@@ -1,0 +1,438 @@
+# Sample localization file for English. Add more files in this directory for other locales.
+# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+
+en_GB:
+  #meta
+  meta_title: "Dance Battles"
+  share_text: "share"
+  #auth
+  auth_login: "record your moves"
+  auth_record_moves: "record your moves"
+
+  #no videos
+  no_videos: "no videos"
+  video_intro: "intro.flv"
+  video_intro_end: "end_broadcast.flv"
+    
+  #tab
+  tab_copy_a: "Got the moves to step up and battle with the best?"
+  tab_copy_b: "Submit a video of your best Dance Central routine for a chance to win prizes in the Dance Central 3 Dance Off!"
+  tab_link_copy: "Join the dance off"
+
+  #track selection
+  track_next_step: "next"
+  track_select: "select a song"
+  track_select_text: "Choose your favourite song. You’ll follow choreography for the 1st half of your video recording, and then finish with some freestyling in the 2nd. Hit NEXT and get ready to move!"
+
+  #social
+  twitter: "tweet"
+  twitter_copy: "Check out the dance battles and see if you’ve got the moves to win at the Dance Central 3 Dance Off!"
+  twitter_hash: "DanceCentral3"
+  twitter_battle_copy: "Check out this dance battle and see if you’ve got the moves to win at the Dance Central 3 Dance Off!"
+  
+  #social approved
+  social_approved_message: "Check out my moves! My video was just accepted in the Dance Central 3 Dance Off. Watch me battle it out and vote for me to win!dc3danceoff.com"
+  social_approved_description: "dance moves were just accepted into the Dance Central 3 Dance Off. Think you have what it takes? Upload a battle of your own!!"
+  social_approved_name: "ESRB Rating: TEEN (Lyrics, Suggestive Themes"
+
+  facebook: "Facebook"
+  facebook_title: "DANCE CENTRAL 3 DANCE OFF"
+  facebook_caption: "ESRB Rating: TEEN (Lyrics, Suggestive Themes)"
+  facebook_description: "Got moves? Watch battles from the Dance Central Dance Off and then show us how you own it on the dance floor!"
+  
+  facebook_share_battle_title: "share this battle"
+  facebook_share_battle_name: "DANCE CENTRAL 3 DANCE OFF"
+  facebook_share_battle_caption: "ESRB Rating: TEEN (Lyrics, Suggestive Themes)"
+  facebook_share_battle_description_a: "Check out this epic dance battle between "
+  facebook_share_battle_description_b: "and"
+  facebook_share_battle_description_c: "from the Dance Central 3 Dance Off. Think you have what it takes? Upload a battle of your own!"
+
+
+  #header
+  cta_enter_title: "think you have what it takes?"
+  cta_enter_caption: "enter to win big"
+  cta_enter_caption_post: "show us your best moves now"
+  cta_logo_title: "dance central 3"
+  cta_logo_caption: "dance off"
+  cta_usher_title: "see usher set it off"
+  cta_usher_caption: "watch it now"
+
+  #video
+  battle_wins: "battle wins"
+
+  #thanks
+  thanks_title: "thank you!"
+  thanks_text: "Congratulations, your epic dance video uploaded successfully! It’s off for moderation. Once it passes you’ll find it on the homepage of the app underneath My Video."
+  thanks_create_another: "create another"
+  thanks_return_home: "return to home"
+  
+  #lists
+  list_title: "Choose a dancer for the next battle"
+  popular_videos: "most popular"
+  winners_videos: "winners"
+  newest_videos: "newest"
+  your_videos: "your videos"
+  friend_videos: "friend's videos"
+
+  #action
+  reload: "start the next battle"
+  reloading: "reloading"
+  connect: "Sign In"
+  banned: "user is banned"
+  banned_desc: "you have been banned from uploading videos"
+  start_battle: "Start The Battle!"
+  vote: "vote"
+  voted: "voted"
+  vote_win: "winner"
+  vote_lose: "Nice Try"
+  register_vote: "sign in to vote"
+  lorem: "Lorem ipsum dolor sit amet"
+  youtube: "watch this on"
+
+  #player
+  player_play: "play"
+  player_replay: "replay the battle"
+  player_next: "next"
+  player_share: "share this battle"
+
+  #webcam record
+  pre_record_info: "To record your dance off, click on the Allow button and get ready to move!"
+  record_your_moves_now: "record your moves now"
+  preview_your_video: "preview your video"
+  record_again: "record again"
+  choose_new_song: "choose a new song"
+  submit_text: "submit"
+  skip_preview: "skip preview"
+
+  #promo
+  promo_title: "WHERE BETTER DANCERS ARE MADE"
+  promo_body_one: "The best selling dance franchise for Kinect is back and better than ever. Play with up to 8 players and move to 40+ new tracks on the most electrifying soundtrack yet with Dance Central 3."
+  promo_body_two: "Want to really take control of the party? With the new Xbox SmartGlass app, you can build a playlist, pick your next track and keep the party moving."
+  learn_more: "learn more"
+  learn_more_info: "learn more about Xbox SmartGlass"
+  order_the_game: "order your copy of dance central 3 today"
+  follow_the_website: "stay in step at dancecentral.com"
+
+  #prizes
+  prizes_headline: "DANCE & WIN!"
+  prizes_headline_info: "Submit your Dance off video now for a chance to win these amazing prizes!"
+  prizes_headline_info_post: "The opportunity to win prizes has passed, but you can still watch dance battles and upload a video of your best dance moves!"
+
+  prize_one_title: "Grand Prize"
+  prize_one_body: "One (1) custom Dance Central 3 Xbox 360 console and a copy of Dance Central 3, each signed by Usher."
+
+  prize_two_title: "Grand Prize"
+  prize_two_body: "One (1) 250GB Xbox 360 matte black console Kinect bundle, signed by Usher."
+
+  prize_three_title: "2nd Place Prizes"
+  prize_three_body: "Five (5) copies of Dance Central 3 game, signed by Usher."
+
+  #footer
+  legal_copy: "2012 Harmonix Music Systems, Inc. All rights reserved. Dance Central, Dance Central 3, Harmonix and all related titles and logos are trademarks of Harmonix Music Systems, Inc. Dance Central 3 developed by Harmonix Music Systems, Inc. All other marks are the property of their respective owners."
+  rules: "contest rules"
+  faq: "faq"
+  privacy: "privacy"
+  terms: "terms of use"
+
+  #language
+  en_US: "United States"
+  en_GB: "United Kingdom"
+  fr_FR: "France"
+  #en_IN: "Indian"
+
+  #misc
+  and : "and"
+  or : "or"
+  interwebs : "interweb"
+  reset: "reset"
+  #email
+  email_subject: "DC3 Video Submission"
+  email_from: "dev@roundhouseagency.com"
+  email_title: "Subject: Dance Central 3 Dance Off – Video Submission"
+  email_hello: "Hello"
+
+  email_copy_denied_a: "We’re sorry. Your video was not accepted for entry into the Dance Central 3 Dance Off."
+  email_copy_denied_b: "Please visit dc3danceoff.com to view dance battles or submit a new dance video."
+  email_copy_signoff_a: "Best,"
+  email_copy_signoff_b: "The Dance Central 3 Team"
+  email_copy_approved_a: "Congratulations – You Owned It!"
+  email_copy_approved_b: "Your dance video submission was accepted into the Dance Central 3 Dance Off. Check it out at the link below and don’t forget to share your Dance Off with your friends!"
+  email_legal: "Please refer to our terms and conditions."
+  email_link_terms: "Terms and conditions"
+  email_link_privacy: "Privacy policy"
+  email_link_footer: "Please do not respond to this email it is auto generated to alert you to your submission status."
+
+  #submission process
+  submission_start_title: "got what it takes?"
+  submission_start_caption: "(You’ll need to allow Facebook permissions to record or upload your video)"
+  submission_start_caption_auth: "Select a method below to show us 30 seconds of your best moves!"
+  submission_track_by: "By "
+  submission_or_text: "or"
+  submit_webcam: "use webcam"
+  submit_file: "upload a video"
+  submit_regulations_a: "By submitting a video, I have read and agree to the"
+  submit_regulations_b: "Official Rules"
+  submit_regulations_c: "which include rights to this Entry."
+  return_to_the_dance_off: "return to the dance off"
+
+
+  #errors
+  notice_close: "Close"
+  file_loading: "Loading"
+  file_error: "Error"
+  file_success: "Success"
+  loading_message: "Uploading. This may take some time."
+  error_file_type_upload: "File must be one of the following formats:"
+  error_file_size_upload: "File must be under 20Mb in size."
+  error_file_name: "File name taken, please change file name and try again"
+  upload_success: "file has been uploaded"
+
+  #webcam
+  nocamera_title: "no camera detected"
+  nocamera_text: "You need a webcam, try uploading a video instead?"
+  nocamera_link: "try uploading a file instead?"
+  deniedcamera_title: "Camera access denied!"
+  deniedcamera_text: "You must allow camera access!"
+  deniedcamera_again: "Try Again"
+
+  #mobile
+  #share
+  mobile_share_header: "Show Us Your Moves!"
+  mobile_share_body: "Visit the desktop version of the app to enter the Dance Off, watch battles and win cool stuff!"
+  mobile_share_link: "Send Yourself The URL"
+  #featured
+  mobile_featured_header: "Watch the Featured Dance Off"
+  mobile_featured_video: "Start The Battle!"
+  mobile_featured_sub_header: "Own The Dance Floor"
+  mobile_featured_body: "The best selling dance franchise for Kinect is back and better than ever. Play with up to 8 players and move to 40+ new tracks on the most electrifying soundtrack yet with Dance Central 3."
+  mobile_featured_body2: "Want to really take control of the party? With the new Xbox SmartGlass app, you can build a playlist, pick your next track and keep the party moving."
+  #CTA
+  mobile_cta_learn_link: "Learn More"
+  mobile_cta_learn_link2: "Learn More about Xbox SmartGlass"
+  mobile_cta_learn_link3: "order your copy of dance central 3 today"
+  mobile_cta_learn_link4: "stay in step at dancecentral.com"
+  #sponsors
+  mobile_rating_image: "mobile/logo-esrb.jpg"
+  #privacy/legal
+  mobile_faq_link: ""
+  mobile_privacy_link: ""
+  mobile_tou_link: ""
+  #rules/FAQ
+  rules_header: "MICROSOFT DANCE CENTRAL 3 DANCE OFF CONTEST"
+  rules_sub_header: "OFFICIAL RULES"
+
+  rules_section_a_title: "COMMON TERMS USED IN THESE RULES:"
+  rules_section_a_copy_a: "These are the official rules that govern how the Dance Central 3 Dance Off contest will operate (“Contest”)."
+  rules_section_a_copy_b: "In these rules, “we”, “our” and “us” refer to Microsoft Corporation, the sponsor of this Contest. “You” refers to an eligible Contest entrant."
+
+  rules_section_b_title: "CONTEST DESCRIPTION: "
+  rules_section_b_copy_a: "This is a skill-based Contest. The object of this Contest is to create and submit the most popular :30 video of yourself dancing to one of the Contest songs from the game Dance Central 3. Microsoft grants you a limited, non-transferable licence to use the Dance Central 3 content and music provided to you in the Dance Central 3 Dance Off app (“Contest Songs”) solely for your personal, non-commercial use, for the purposes of this contest and the purposes of the Dance Central 3 Dance Off app (“app”)."
+  rules_section_b_copy_b: "For purposes of this Contest, each video you create and submit in the Contest will be called an “Entry”. All eligible Entries received will be judged using the criteria described below to determine winners. "
+
+  rules_section_c_title: "WHAT ARE THE START AND END DATES?"
+  rules_section_c_copy_a: "This Contest starts at 9 am Pacific Time (PT) on 15 October 2012, and ends at 11:59 pm PT on 14 December 2012 (“Entry Period”). Public voting will take place on during the Entry Period, the results of which will determine the winner. "
+
+  rules_section_d_title: "CAN I ENTER?"
+  rules_section_d_copy_a: "You are eligible to enter this Contest if you meet the following requirements at time Entry:"
+  rules_section_d_copy_b: "If you are 18 of age or older, but are considered a minor in your place of residence, you should ask your parent’s or legal guardian’s permission prior to submitting an Entry into this Contest; and"
+  rules_section_d_copy_c: "You are NOT an employee of Microsoft Corporation or an employee of a Microsoft subsidiary; and"
+  rules_section_d_copy_d: "You are NOT involved in any part of the administration and execution of this Contest; and"
+  rules_section_d_copy_e: "You are NOT an immediate family (parent, sibling, spouse, child) or household member of a Microsoft employee, an employee of a Microsoft subsidiary or a person involved in any part of the administration and execution of this Contest."
+  rules_section_d_copy_f: "This Contest is void outside the geographic area described above and wherever else prohibited by law. "
+
+  rules_section_e_title: "HOW DO I ENTER?"
+  rules_section_e_copy_a: "To submit an Entry, visit http://dc3danceoff.com the Dance Central 3 Facebook application (“app”). You may submit a video you’ve created or you may use the app and a webcam to create a video. Enter in one of the following ways:"
+  rules_section_e_copy_b: "1.) This entry method requires you to have a webcam attached to a PC. Access the app and select “Use a Webcam” and follow instructions to record a: 30 second video of yourself dancing to one of the three available Contest Songs. You are not required to perform the suggested moves. Once satisfied with your performance, click “Submit” to submit your Entry."
+  rules_section_e_copy_c: "2.) Create and save a :30 video of yourself dancing to one of the three available Contest Songs. Access the app , select “Upload a Video” and follow the instructions to upload your video and click “Submit” to submit your Entry."
+
+  rules_section_f_title: "Your Use of Dance Central 3 Content"
+  rules_section_f_copy_a: "Microsoft grants you a limited, non-transferable licence to use the Dance Central 3 content and music provided to you in the Dance Central 3 Dance Off app solely for your personal, non-commercial use, for the purposes of this contest and the purposes of the Dance Central 3 Dance Off app."
+  rules_section_f_copy_b: "Limit 10 entries per person regardless of entry method. We are not responsible for entries that we do not receive for any reason, or for entries that we receive but are not decipherable for any reason. "
+
+  rules_section_g_title: "We will automatically disqualify:"
+  rules_section_g_copy_a: "Any incomplete or illegible Entry; and"
+  rules_section_g_copy_b: "Any entries that we receive from you that are in excess of the entry limit described above."
+  
+  rules_section_h_title: "WHAT CONSTITUTES AN ELIGIBLE ENTRY?"
+  rules_section_h_copy_a: "To be eligible for judging your Entry must meet the following requirements: "
+  rules_section_h_copy_b: "our Entry must be your own work; "
+  rules_section_h_copy_c: "and Your Entry cannot have been selected as a winner in any other contest; and"
+  rules_section_h_copy_d: "Your Entry may not include any third party trademarks (logos, names) or copyrighted materials (music, images, video, recognisable people) with the exception of the Sponsor’s content and music described above In addition, Entries may NOT contain, as determined by us, in our sole and absolute discretion, any content that:"
+  rules_section_h_copy_e: "is sexually explicit, unnecessarily violent or derogatory of any ethnic, racial, gender, religious, professional or age group; profane or pornographic; promotes alcohol, illegal drugs, tobacco, firearms/weapons (or the use of any of the foregoing) or a particular political agenda; is obscene or offensive; defames, misrepresents or contains disparaging remarks about other people or companies; contains trademarks, logos or trade dress (such as distinctive packaging or building exteriors/interiors) owned by others; contains copyrighted materials owned by others (including photographs, sculptures, paintings and other works of art or images published on or in websites, television, films or other media); contains materials embodying the names, likenesses, voices or other indicia identifying any person, (other than the member of your family or community for you have received consent) including, without limitation, celebrities and/or other public or private figures, living or dead; contains look-alikes of celebrities or other public or private figures, living or dead; communicates messages or images inconsistent with the positive images and/or good will to which we wish to associate; and/or violates any law;"
+  rules_section_h_copy_f: "We reserve the right to reject any Entry, in our sole and absolute discretion, that we determine does not meet the above criteria."
+
+  rules_section_i_title: "HOW WILL MY ENTRY BE POTENTIALLY USED?"
+  rules_section_i_copy_a: "By submitting your Entry, you:"
+  rules_section_i_copy_b: "are granting us an irrevocable, royalty-free, worldwide right and licence to: (i) publish, use, review, assess, test and otherwise analyse your Entry and all its content in connection with this Contest; and (ii) feature your Entry and all content in connection with the marketing, sale or promotion of this Contest (including but not limited to internal and external sales meetings, conference presentations, tradeshows and screen shots of the Entry in press releases) in all media (now known or later developed)"
+  rules_section_i_copy_c: "agree to sign any necessary documentation that may be required for us and our designees to make use of the rights you granted above; "
+  rules_section_i_copy_d: "understand and acknowledge that the Sponsor(s) may have developed or commissioned materials similar or identical to your submission and you waive any claims you may have resulting from any similarities to your Entry; "
+  rules_section_i_copy_e: "understand that we cannot control the incoming information you will disclose to our representatives in the course of entering, or what our representatives will remember about your Entry. You also understand that we will not restrict work assignments of representatives who have had access to your Entry. By entering this Contest, you agree that use of information in our representatives’ unaided memories in the development or deployment of our products or services does not create liability for us under this agreement or copyright or trade secret law; "
+  rules_section_i_copy_f: "understand that you will not receive any compensation or credit for use of your Entry, other than what is described in these Official Rules"
+  rules_section_i_copy_g: "Please note that your Entry may be posted on a website selected by us for viewing by visitors to that website. We are not responsible for any unauthorised use of your Entry by visitors to this website. While we reserve these rights, we are not obligated to use your Entry for any purpose, even if it has been selected as a winning Entry."
+  rules_section_i_copy_h: "If you do not want to grant us these rights to your Entry, please do not enter this Contest."
+  
+  rules_section_j_title: "WINNER DETERMINATION AND PRIZES"
+  rules_section_j_copy_a: "During the Entry Period visitors to [URL] will be invited to vote for their favourite Entry. At the close of the Entry Period, the top 26 highest scoring Entries, as measured by user votes, will receive prizes as follows:"
+  rules_section_j_copy_b: "Highest Score: Grand Prize: A Dance Central 3 branded custom Xbox 360 4GB console autographed by Usher and the Xbox game title  Dance Central 3 autographed by Usher. Approximate Retail Value, ARV, $300 total"
+  rules_section_j_copy_c: "2nd – 6th highest score: 1st Place Prize: An Xbox 360 4GB console autographed by Usher. ARV,  $250 ea"
+  rules_section_j_copy_d: "(7th – 21st highest score: ) 2nd Place Prize - The Xbox game title Dance Central 3 autographed by Usher. ARV, $50 ea "
+  rules_section_j_copy_e: "Total ARV of all prizes: $2,550."
+  rules_section_j_copy_f: "In the event of a tie between any eligible entries, a Microsoft judge will break the tie based on what the judge deems the best dance. For all of the consolation prizes, everyone else who has at least 20 votes will get put into a random draw. The decisions of the judges are final and binding. If we do not receive a sufficient number of entries meeting the entry requirements, we may, at our discretion, select fewer winners than the number of Contest Prizes described below."
+  rules_section_j_copy_g: "If you are a potential winner, we will notify you by sending a message to the email address, the phone number or postal address (if any) provided at time of Entry within seven (7) days following completion of judging. If the notification that we send is returned as undeliverable, or you are otherwise unreachable for any reason, we may award to a runner-up."
+  rules_section_j_copy_h: "If there is a dispute as to who is the potential winner, we will consider the potential winner to be the authorised account holder of the email address used to enter the Contest. If you are a potential winner, we may require you to sign an Affidavit of Eligibility, Liability/Publicity Release and a W-9 tax form or W-8 BEN tax form within 10 days of notification. If you are a potential winner and you are 18 or older, but are considered a minor in your place of legal residence, we may require your parent or legal guardian to sign all required forms on your behalf. If you do not complete the required forms as instructed and/or return the required forms within the time period listed on the winner notification message, we may disqualify you and select a runner-up."
+  rules_section_j_copy_i: "If you are confirmed as a winner of this Contest: "
+  rules_section_j_copy_j: "You may not exchange your prize for cash or any other merchandise or services. However, if for any reason an advertised prize is unavailable, we reserve the right to substitute a prize of equal or greater value; and"
+  rules_section_j_copy_k: "You may not designate someone else as the winner. If you are unable or unwilling to accept your prize, we may award it to a runner up; and"
+  rules_section_j_copy_l: "If you accept a prize, you will be solely responsible for all applicable taxes related to accepting the prize; and"
+  rules_section_j_copy_m: "If you are otherwise eligible for this Contest, but are considered a minor in your place of residence, we may award the prize to your parent/legal guardian on your behalf; and"
+  rules_section_j_copy_n: "Unless otherwise noted, all prizes are subject to their manufacturer’s warranty and/or terms and conditions."
+  rules_section_j_copy_o: "We will only award one (1) prize per person."
+
+  rules_section_k_title: "WHAT OTHER CONDITIONS AM I AGREEING TO BY ENTERING?"
+  rules_section_k_copy_a: "By entering this Contest you agree: "
+  rules_section_k_copy_b: "To abide by these Official Rules; and"
+  rules_section_k_copy_c: "To release and hold harmless Microsoft and its respective parents, subsidiaries, affiliates, employees and agents from any and all liability or any injury, loss or damage of any kind arising from or in connection with this Contest, or any prize won; and"
+  rules_section_k_copy_d: "That Microsoft’s decisions will be final and binding on all matters related to this Contest; and"
+  rules_section_k_copy_e: "That, by accepting a prize, Microsoft may make use of your proper name and state/region of residence online and in print, or in any other media, in connection with this Contest, without payment or compensation to you, except where prohibited by law."
+
+  rules_section_l_title: "WHAT LAWS GOVERN THE WAY THIS CONTEST IS EXECUTED AND ADMINISTRATED?"
+  rules_section_l_copy_a: "This Contest will be governed by the laws of the US State of Washington, and you consent to the exclusive jurisdiction and venue of the courts of the US State of Washington for any disputes arising out of this Contest. "
+
+  rules_section_m_title: "WHAT IF SOMETHING UNEXPECTED HAPPENS AND THE CONTEST CAN’T RUN AS PLANNED?"
+  rules_section_m_copy_a: "If someone cheats, acts in an unsportsmanlike manner to gain fraudulent votes, or a virus, bug, catastrophic event or any other unforeseen or unexpected event that cannot be reasonably anticipated or controlled, (also referred to as force majeure) affects the fairness and/or integrity of this Contest, we reserve the right to cancel, change or suspend this Contest. This right is reserved whether the event is due to human or technical error. If a solution cannot be found to restore the integrity of the Contest, we reserve the right to select winners from among all eligible entries received before we had to cancel, change or suspend the Contest. "
+  rules_section_m_copy_b: "If you attempt to compromise the integrity or the legitimate operation of this Contest by hacking or by cheating or committing fraud in ANY way, we may seek damages from you to the fullest extent permitted by law. Further, we may ban you from participating in any of our future Contest, so please play fairly."
+  
+  rules_section_n_title: "HOW CAN I FIND OUT WHO WON?"
+  rules_section_n_copy_a: "We will post the names of winners who received a prize worth $25.00 or more online at http://dc3danceoff.com. This list will remain posted one month after 14 January 2013."
+
+  rules_section_o_title: "WHO IS SPONSORING THIS CONTEST?"
+
+
+  faq_title: "Frequently Asked Questions"
+  faq_header: "How many votes do I need in order to win? "
+  faq_copy: "Winners will be randomly selected from a pool of eligible submissions."
+
+  faq_header2: "Does entering multiple videos increase my odds of winning?"
+  faq_copy2: "It won’t but it may increase your odds of becoming an international dance sensation."
+
+  faq_header3: "Why is my video on YouTube?"
+  faq_copy3: "In order to comply with music licensing requirements, we must make the use of the video available on YouTube. But don’t sweat, this video is listed privately on Youtube."
+
+  faq_header4: "Who do I contact if I have questions, comments, concerns?"
+  faq_copy4: "We are good at solving problems. Send a brief description to the nice folks at dc3danceoff@roundhouseagency.com"
+
+  faq_header5: "I uploaded a video of myself doing the Worm at my best friend’s birthday party. Why aren’t you showing the whole video?"
+  faq_copy5: "Uploaded videos are limited to thirty seconds of running time so that all contestants have an equal amount of time to showcase their skills."
+
+  faq_header6: "I submitted my video and want to share it with my mum. Why don’t I see it?"
+  faq_copy6: "Your video must first pass moderation before entering the Dance Off. Keep it clean and you’ll have no problem getting through. "
+
+  terms_title: "Terms and conditions"
+  terms_copy1: "This app is &copy; 2012 Microsoft Corporation. All rights reserved."
+  terms_copy2: "By downloading or using the app, you accept these terms. If you do not accept them, do not download or use the app."
+  terms_copy3: "Microsoft grants you a limited, non-transferable licence to use this app and the content provided in this app solely for your personal, non-commercial use, and solely for the purposes stated within this app."
+  terms_copy4: "You may not use the app in any manner that violates others' privacy, publicity or other intellectual property rights or that is fraudulent or unlawful."
+  terms_copy5: "You hereby release Microsoft from any and all liability, of any and every nature, arising out of any use of the app."
+  terms_copy6: 'The app is licensed "as-is" and in no event shall Microsoft be liable for any damages whatsoever associated with use of the app, including any special, indirect or consequential damages, whether in an action of contract, negligence or other tortious action, arising out of or in connection with the use or performance of software, or information available from the app.'
+  back: "back"
+  #date
+  date:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%b %d"
+      long: "%B %d, %Y"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"
+      short: "%d/%m/%Y"
+      long: "%d/%m/%Y"
+
+  # session
+  devise:
+    failure:
+      admin_user:
+        unauthenticated: "Unauthenticated"
+    sessions:
+      admin_user:
+        signed_in: "Signed In"
+  # admin
+  active_admin:
+    dashboard: Dashboard
+    dashboard_welcome:
+      welcome: "Welcome to Active Admin. This is the default dashboard page."
+      call_to_action: "To add dashboard sections, checkout 'app/admin/dashboards.rb'"
+    view: "View"
+    edit: "Edit"
+    delete: "Delete"
+    delete_confirmation: "Are you sure you want to delete this?"
+    new_model: "New %{model}"
+    create_model: "New %{model}"
+    edit_model: "Edit %{model}"
+    update_model: "Edit %{model}"
+    delete_model: "Delete %{model}"
+    details: "%{model} Details"
+    cancel: "Cancel"
+    empty: "Empty"
+    previous: "Previous"
+    next: "Next"
+    download: "Download:"
+    has_many_new: "Add New %{model}"
+    has_many_delete: "Delete"
+    filter: "Filter"
+    clear_filters: "Clear Filters"
+    search_field: "Search %{field}"
+    equal_to: "Equal To"
+    greater_than: "Greater Than"
+    less_than: "Less Than"
+    main_content: "Please implement %{model}#main_content to display content."
+    logout: "Logout"
+    sidebars:
+      filters: "Filters"
+    pagination:
+      empty: "No %{model} found"
+      one: "Displaying <b>1</b> %{model}"
+      one_page: "Displaying <b>all %{n}</b> %{model}"
+      multiple: "Displaying %{model} <b>%{from}&nbsp;-&nbsp;%{to}</b> of <b>%{total}</b> in total"
+      entry:
+        one: "entry"
+        other: "entries"
+    any: "Any"
+    blank_slate:
+      content: "There are no %{resource_name} yet."
+      link: "Create one"
+    batch_actions:
+      button_label: "Batch Actions"
+      delete_confirmation: "Are you sure you want to delete these %{plural_model}? You won't be able to undo this."
+      succesfully_destroyed:
+        one: "Successfully destroyed 1 %{model}"
+        other: "Successfully destroyed %{count} %{plural_model}"
+      selection_toggle_explanation: "(Toggle Selection)"
+      link: "Create one"
+      action_label: "%{title} Selected"
+      labels:
+        destroy: "Delete"
+    comments:
+      body: "Body"
+      author: "Author"
+      title: "Comment"
+      add: "Add Comment"
+      resource: "Resource"
+      no_comments_yet: "No comments yet."
+      title_content: "Comments (%{count})"
+      errors:
+        empty_text: "Comment wasn't saved, text was empty."
+    devise:
+      login:
+        title: "Login"
+        remember_me: "Remember me"
+        submit: "Login"
+      reset_password:
+        title: "Forgot your password?"
+        submit: "Reset My Password"
+      change_password:
+        title: "Change your password"
+        submit: "Change my password"
+      links:
+        sign_in: "Sign in"
+        forgot_your_password: "Forgot your password?"

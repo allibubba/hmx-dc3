@@ -1,0 +1,14 @@
+<div class="video-list scrollable vertical">
+  <div class="items">
+  <% videos.each_slice(12) do |vid| -%>
+    <div>
+      <% vid.each do |v| %>
+        <%=render :partial => "shared/videoblock", :locals => { :video => v, :flag => flag}%>
+      <% end -%>
+    </div>
+  <% end -%>
+  </div>
+</div>
+
+<a href="#" class="load-down next"></a>
+<a href="#" class="load-up prev"></a>

@@ -1,0 +1,109 @@
+<script type="text/javascript">
+  var currentTrack = 0;
+  function initSettings(settings){
+    var trk = $('.track');
+    //console.log('track',trk)
+
+    var movesPlayer = $('.movesPlayer')
+
+    //console.log(settings)
+    i = settings.track -1;
+    //console.log($(movesPlayer[i]))
+    $(movesPlayer[i]).css({display:'block'});
+
+    player = document.getElementById('videoPlayerContainer');
+    if(i != currentTrack){
+      switch (i){
+        case 0:
+          //document.getElementById('movesPlayer').setContentPath('scream_ss');
+          player.sendEvent('LOAD', {'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/', 'provider':'rtmp',  'file':'scream_ss.flv'})
+        break;
+        
+        case 1:
+          //document.getElementById('movesPlayer').setContentPath('hustle_ss');
+          player.sendEvent('LOAD', {'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/', 'provider':'rtmp',  'file':'hustle_ss.flv'})
+        break;
+        
+        case 2:
+          //document.getElementById('movesPlayer').setContentPath('dougie_ss');
+          player.sendEvent('LOAD', {'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/', 'provider':'rtmp',  'file':'dougie_ss.flv'})
+        break;
+      
+      }
+      
+      currentTrack = i;
+    }
+  }
+
+  var settings = {};
+  $(function(){
+    track.each(function(index, el){
+      $(el).click(function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        //console.log('clicked: ',$(el))
+        //console.log('target: ',$(e.target))
+
+        settings.track  = $(el).data('id');
+        settings.video  = $(el).data('media');
+        settings.anchor = $(e.target);
+        initSettings(settings);
+        track.each(function(i){
+           $(this).removeClass('active');
+        })
+        $(el).addClass('active');
+
+      })
+    })
+  })
+</script>
+
+<div class="inner-wrapper">
+<section role="wizard-bg">
+  <a href="/" class="go-back-btn"><%= t :return_to_the_dance_off %> &nbsp; ></a>
+
+  <div id="trackSelection">
+  <a href="#" id="reset" style="display:none;">reset</a>
+  <div class="webcam-wiz-characters"></div>
+
+    <aside class="wiz-left">
+      <h1><%= t :track_select %></h1>
+      <p><%= t :track_select_text %></p>
+
+      <% @tracks.each do |track| %>
+        <div class="track" data-id="<%=track.id%>" data-media="<%=track.media%>">
+          <p><%=track.title%>
+          <span><%= t :submission_track_by %> <%=track.artist_name%></span>
+          </p>
+        </div>
+      <%end%>
+      
+    </aside>
+    <aside class="wiz-right">
+      <div id="videoPlayerContainer"></div>
+      <script type="text/javascript">
+        jwplayer('videoPlayerContainer').setup({
+          'flashplayer': '/player/player.swf',
+          'id': 'instructionVid',
+          'class': 'movesPlayer',
+          'width': '410',
+          'height': '309',
+          'allowFullscreen': false,
+          'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/',
+          'file': 'scream_ss.flv',
+          'autostart': 'true',
+          //'image': 'http://emgklovf.rtmphost.com/http/thumbnail_play/thumbplay_4702118931945570673.png',
+          'skin': '/player/skins/glow.zip'
+        });
+      </script>
+
+      <a href="#" onclick="_gaq.push(['_trackEvent', 'Upload', 'Song Selected', $('.track.active').find('p').text()]);" class="next"><%= t :track_next_step %></a>
+      <div id="option">
+      </div>
+    </aside>
+  </div>
+</section>
+</div>
+<script>
+  var NO_FILE = 'no file?';
+</script>

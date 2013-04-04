@@ -1,0 +1,6 @@
+<div class="denied-camera">
+  <h1><%= t :nocamera_title %></h1>
+  <p><%= t :nocamera_text %></p>
+  <%= link_to "#{t :submit_file}", {:controller => "videos", :action => "new"}, :class => 'primary-btn upload-btn-icon-wiz', :style => 'left:370px' %>
+  <a href="#" onclick="initReset();" style="display:none;"><%= t :reset %></a>
+</div>

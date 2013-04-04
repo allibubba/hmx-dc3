@@ -1,0 +1,121 @@
+<% if @user && ! @user.banned%>
+  
+  <%=render :partial => "shared/select_track"%>
+
+  <div id='target'></div>
+
+
+
+  <script type="text/javascript">
+    $('.next').remove();
+    var track = $('.track');
+    var next_url = "/video/uploadform/"
+    
+    function closeNotice(){
+      //console.log('closing notice');
+      $('.notice').each(function(i, el){
+        $(el).fadeOut('fast');
+      })
+    }
+
+    $(function(){
+      // inject the form
+     
+
+      // watch settings for chagne!
+      settings.watch("track",  function (id, oldval, newval) {
+        var updateVal = $('#video_track');
+        //console.log("o." + id + " changed from " + oldval + " to " + newval, updateVal);
+        updateVal.val(newval);
+        return newval;
+      });
+
+      $('#reset').live("click", function(e){
+      //$('#reset').click(function(e){
+        e.preventDefault();
+        $('#target_form').fadeOut(300);
+        //$('#playerContainer').css({display:'none'});
+        $('#playerContainer').remove();
+        $(track[0]).trigger('click');
+      })      
+      // next
+      /* NEXT REMOVED
+      $('.next').click(function(e){
+        e.preventDefault();
+          $('#target_form').fadeIn(300);
+      });  
+      */
+      $(track[0]).trigger('click');
+    })
+
+    $(document).ready(function() {
+       $('#option').html(ich.user());
+       //console.log('FORM',$("#target_form"))
+       $("#target_form").ajaxForm({
+        url: '/upload/file', 
+        type: 'post',
+        dataType: 'json',
+        beforeSend: function(xhr,settings){
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+          message = {loading:'<%= t :loading_message %>'}
+          //console.log('---- presend ----', message);
+          $('#option').append(ich.notice_loading(message).fadeIn('fast'));
+        },
+        complete: function(data){
+          closeNotice();
+          d = $.parseJSON(data.responseText)
+          if(d.error){
+            //console.log(d.error)
+            //console.log('notice', d)
+            $('#option').append(ich.notice(d).fadeIn('fast'));
+          }else if(d.success){
+            //console.log(d)
+            $.ajax({
+              type: 'GET',
+              beforeSend: function(xhr,settings){
+                xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+                //console.log('---- presend ----')
+              },
+              url: "/home/thanks.js/",
+              complete: function(data){
+                // ich.user is undefined here
+                $('section[role="wizard-bg"]').html(data.responseText);
+              }
+            });            
+          }
+        }
+      });
+    });
+  </script>
+
+<%elsif @user && @user.banned%>
+      <h4>you have been banned from uploading videos</h4>
+<%else%>
+  <%=render :partial => "shared/auth"%>
+<%end%>
+
+<%=render :partial => "shared/battles_cta"%>
+
+<script id="user" type="text/html">
+  <%= form_tag({:controller => "upload", :action => "file", :format => "json"}, :class => "file-upload-form", :multipart => true, :id => "target_form") do |f| %>
+    <input id="video_track" name="track_id" type="hidden" value="<%=Track.first.id%>">
+    <div>
+    <%# file_field_tag "video_file", :accept => "video/x-flv,application/ogg,application/ogg,video/ogg,video/mp4,video/mp4,video/quicktime,video/x-m4v,video/mpeg"%>
+    <%= file_field_tag "video_file"%>
+    <input name="commit" type="submit" value="submit" class="primary-btn submit-btn">
+    </div>
+    <% end %>
+</script>
+
+<script id="notice_loading" type="text/html">
+  <div class="notice loading">
+    <p><%= t :file_loading %>: {{loading}}</p>
+  </div>
+</script>
+
+<script id="notice" type="text/html">
+  <div class="notice">
+    <p><%= t :error %>: {{error}}</p>
+    <a onclick="closeNotice()" href="#" class="primary-btn close-btn"><%= t :notice_close %></a>
+  </div>
+</script>

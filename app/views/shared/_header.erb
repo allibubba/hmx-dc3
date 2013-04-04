@@ -1,0 +1,73 @@
+<div class="inner-wrapper">
+  <header>
+    <section role="header">
+      <!-- Share App Top -->
+      <div class="share-top">
+        <!-- <span><%= t :share_text %></span> -->
+        <%=render :partial => "shared/social"%>
+      </div>
+
+      <!-- Enter to win CTA -->
+      <aside class="etw-cta">
+        <div class="alt">
+          <a href="/home/createvideo" class="cta-btn">
+            <h2><%= t :cta_enter_title %></h2>
+            <h3><%= t :cta_enter_caption %> > </h3>
+          </a>
+        </div>    
+      </aside>
+
+      <!-- Header Logo -->
+      <aside class="dc3-logo">
+        <a href="/">
+          
+        </a>
+      </aside>
+
+      <!-- Watch Usher video CTA -->
+      <aside class="usher-cta">
+        <a href="#" class="cta-btn">
+          <h2><%= t :cta_usher_title %></h2>
+          <h3><%= t :cta_usher_caption %> > </h3>
+        </a>
+      </aside>
+
+    <section>
+  </header>
+</div>
+
+<div id="vid-modal" style="display:none;">
+  <div id='mediaplayer'></div>
+  <a href="#" class="go-back-btn"><%= t :return_to_the_dance_off %> &nbsp; ></a>
+
+  <script type="text/javascript">
+    var watchStart = 0;
+
+    jwplayer('mediaplayer').setup({
+      'flashplayer': '/player/player.swf',
+      'id': 'playerID',
+      'width': '815',
+      'height': '460',
+      'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/',
+      'file': '<%= t :video_intro %>',
+      'autostart': 'true',
+      'volume':100,
+      'logo.hide':true,
+      'skin': '/player/skins/glow.zip',
+      events: {
+        onComplete: function() {
+          if(watchStart == 0){
+            _gaq.push(['_trackEvent', 'Intro Video', 'Finished Intro']);
+            watchStart = 1;
+            var player = document.getElementById('mediaplayer');
+            player.sendEvent('LOAD', {'streamer':'rtmp://roundhousecdn.influxis.com/emgklovf/dc3/streams/_definst_/', 'provider':'rtmp', 'file':'<%= t :video_intro_end %>'});
+          }else{
+            _gaq.push(['_trackEvent', 'Intro Video', 'Finished Usher']);
+            $('.go-back-btn').trigger("click");
+            watchStart = 0;
+          }
+        }
+      }
+    });
+  </script>
+</div>

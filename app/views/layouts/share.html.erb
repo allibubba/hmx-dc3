@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DC3 share: <%= @video.title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+
+  <!-- jQuery -->
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js' %>
+  <!-- /jQuery -->
+  
+  <%= csrf_meta_tags %>
+
+
+  <!-- OG -->
+  <meta property="og:url"           content="<%=BASE_URL%>share/<%=@video.id%>" >
+  <meta property="og:title"         content="DC3 video: <%= @video.title %>" >
+  <meta property="og:type"          content="movie" >
+  <meta property="og:image"         content="TODO: get thumb" >
+  <meta property="og:site_name"     content="DC# dance battles" >
+  <meta property="og:description"   content="Video: by <%= @video.user.name_first %>" >
+  <meta property="og:locale"        content="en_US" >
+  <meta property="fb:admins"        content="100002574691787" >
+  <!-- OG:video -->
+  <meta property="og:video"         content="rtmp://<%=INFLUXIS_BASE%>recorder/<%= @video.media_id %>" >
+  <meta property="og:video:type"    content="video/mp4" >
+  <meta property="og:video:height"  content="480" >
+  <meta property="og.video:width"   content="600" >  
+  <!-- /OG -->
+</head>
+
+<body>
+
+  <div id="fb-root"></div>
+  
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=151259104968742";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+
+<%= yield %>
+
+<div class="fb-like" data-href="<%=BASE_URL%>share/<%=@video.id%>" data-send="false" data-width="450" data-show-faces="false"></div>
+
+</body>
+</html>

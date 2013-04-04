@@ -1,0 +1,7 @@
+<%= form_tag({:controller => "upload", :action => "file"}, :multipart => true, :id => 'target') do |f| %>
+    <input id="video_track" name="track_id" type="hidden" value="<%=Track.first.id%>">
+    <div>
+        <%= file_field_tag 'video_file' %>
+        <%= submit_tag("submit") %>
+    </div>
+<% end %>

@@ -1,0 +1,23 @@
+development: &defaults
+  client_id: CLIENT_ID
+  client_secret: CLIENT_SECRET
+  scope: email, read_stream, offline_access, publish_stream
+  callback: CALLBACK_URL
+  base_url: BASE_URL
+
+test:
+  <<: *defaults
+
+staging:
+  client_id: CLIENT_ID
+  client_secret: CLIENT_SECRET
+  scope: email, read_stream, offline_access, publish_stream
+  callback: CALLBACK_URL
+  base_url: BASE_URL
+
+production:
+  client_id: CLIENT_ID
+  client_secret: CLIENT_SECRET
+  scope: email, read_stream, offline_access, publish_stream
+  callback: CALLBACK_URL
+  base_url: BASE_URL

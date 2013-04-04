@@ -1,0 +1,33 @@
+<?xml version="1.0"?> 
+<!DOCTYPE cross-domain-policy SYSTEM "http://www.adobe.com/xml/dtds/cross-domain-policy.dtd"> 
+<cross-domain-policy> 
+	<site-control permitted-cross-domain-policies="master-only" /> 
+	<allow-access-from domain="s-static.facebook.com" /> 
+	<allow-access-from domain="static.facebook.com" /> 
+	<allow-access-from domain="static.ak.facebook.com/common/"/>
+	<allow-access-from domain="static.api.ak.facebook.com" /> 
+	<allow-access-from domain="*.static.ak.facebook.com" /> 
+	<allow-access-from domain="s-static.thefacebook.com" /> 
+	<allow-access-from domain="static.thefacebook.com" /> 
+	<allow-access-from domain="static.api.ak.thefacebook.com" /> 
+	<allow-access-from domain="*.static.ak.thefacebook.com" /> 
+	<allow-access-from domain="*.static.ak.fbcdn.com" /> 
+	<allow-access-from domain="external.ak.fbcdn.com" /> 
+	<allow-access-from domain="*.static.ak.fbcdn.net" /> 
+	<allow-access-from domain="external.ak.fbcdn.net" /> 
+	<allow-access-from domain="www.facebook.com" /> 
+	<allow-access-from domain="www.new.facebook.com" /> 
+	<allow-access-from domain="register.facebook.com" /> 
+	<allow-access-from domain="login.facebook.com" /> 
+	<allow-access-from domain="ssl.facebook.com" /> 
+	<allow-access-from domain="secure.facebook.com" /> 
+	<allow-access-from domain="ssl.new.facebook.com" /> 
+	<allow-access-from domain="static.ak.fbcdn.net" /> 
+	<allow-access-from domain="fvr.facebook.com" /> 
+	<allow-access-from domain="s-static.ak.facebook.com" /> 
+	<allow-access-from domain="www.latest.facebook.com" /> 
+	<allow-access-from domain="www.inyour.facebook.com" /> 
+	<allow-access-from domain="s-static.ak.fbcdn.net" /> 
+	<allow-access-from domain="localhost" />
+	<allow-access-from domain="10.1.10.248" />
+</cross-domain-policy>

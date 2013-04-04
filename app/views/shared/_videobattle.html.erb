@@ -1,0 +1,216 @@
+<script type="text/javascript">
+  var flashvars = {};
+  flashvars.dancers  = [];
+  flashvars.track_url  = [];
+  flashvars.identifier  = [];
+
+
+  function postToFeed() {
+    // calling the API ...
+    <% videos.each do |video| %>
+      _gaq.push(['_trackEvent', 'Dancers', 'FB Share Intent', '<%=generate_name(video)%>']);
+    <% end %>
+    var obj = {
+      method: 'feed',
+      link: '<%=BASE_URL%>/vid/<%=videos[0].id%>/<%=videos[1].id%>',
+      picture: '<%=BASE_URL%>/img/battle_90x90.jpg',
+      name: '<%= t :facebook_share_battle_name %>',
+      caption: '<%= t :facebook_share_battle_caption %>',
+      description: '<%= t :facebook_share_battle_description_a %> <%=videos[0].user.name_first%> <%= t :facebook_share_battle_description_b %> <%=videos[1].user.name_first%> <%= t :facebook_share_battle_description_c %>'
+
+    };
+    function callback(response) {
+      console.log(response);
+      <% videos.each do |video| %>
+        _gaq.push(['_trackEvent', 'Dancers', 'FB Share Complete', '<%=generate_name(video)%>']);
+      <% end %>
+      //document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+    }
+    FB.ui(obj, callback);
+  }
+  function postTweet() {
+    <% videos.each do |video| %>
+      _gaq.push(['_trackEvent', 'Dancers', 'Tweet Intent', '<%=generate_name(video)%>']);
+    <% end %>
+    window.tweet_callback = function() {
+      <% videos.each do |video| %>
+        _gaq.push(['_trackEvent', 'Dancers', 'Tweet Complete', '<%=generate_name(video)%>']);
+      <% end %>
+    }
+  }
+</script>
+
+<!-- load player here -->
+<div class="vid-holder">
+<div id='vidHolder'></div>
+</div>
+
+<div id="user-block" style="display:none;">
+<% videos.each do |video| %>
+
+<script type="text/javascript">
+  _gaq.push(['_trackEvent', 'Dancers', 'Loaded', '<%=generate_name(video)%>']);
+  flashvars.autoplay = false;
+  flashvars.dancers.push("<%=video.media_id%>");
+  flashvars.identifier.push("<%=video.id%>");
+  flashvars.track_url = "<%=video.track.format_mpeg%>";
+  <% if @auto_play %>
+    flashvars.autoplay = true;
+  <%end %>  
+</script>
+
+    <!-- user data -->
+    <div class="user-block" id="video_<%=video.id%>">
+      <div class="color-filter">
+        <div class="filter"></div>
+        <img src="https://graph.facebook.com/<%=video.user.username%>/picture" width="67" height="68" />
+      </div>
+      <div class="user-info">
+        <p><%=generate_name(video)%></p>
+        <p style="margin-bottom: 9px;"><%=video.user.location%></p>
+        
+        <% if video.youtube_url %>
+          <a target="_blank" class="yt-link" href="<%=video.youtube_url%>"><%= t :youtube %> <%= image_tag("yt-icon.png", :alt => "Youtube") %></a>
+        <%end %>
+      </div>
+      
+
+
+      <div class="vote-count" style="display:none;">
+        <span><%= "#{video.votes_count}" %></span>
+        <p>
+          <%= t :battle_wins%>
+        </p>
+      </div>
+
+      <%=
+      link_to "#{t :vote}", 
+      video_vote_path(video.id,:format => :json), 
+      {
+        
+        #:disable_with => "#{t :voted}" ,
+        :class => 'remote_action voting', 
+        :"data-videoid" => video.id,
+        :onclick => "_gaq.push(['_trackEvent', 'Dancers', 'Voted', '#{generate_name(video)}']);"
+      }
+      %>
+
+
+    </div>
+
+<%end %>
+</div>
+
+<script type="text/javascript">
+//console.log('flashvars.dancers',flashvars.dancers)
+//console.log('flashvars.identifier',flashvars.identifier)
+var params = {
+  menu: "false",
+  allowscriptaccess: "always",
+  wmode: "opaque"
+};
+var attributes = {
+  id: "dancePlayer",
+  name: "dancePlayer"
+};
+swfobject.embedSWF("/battle.swf", "vidHolder", "965", "360", "9.0.0","expressInstall.swf", flashvars, params, attributes);
+</script>
+
+<script type="text/javascript">
+function logVidId(vidId){
+  //console.log(vidId)
+}
+
+function showBtns(){
+  //console.log('show buttons');
+  $("#endMenu").fadeIn("fast");
+  $(".vote-count").fadeIn("fast");
+}
+
+function flashIsReady(){
+  //console.log('flash is ready');
+ 
+  $('.user-block').each(function(i, el){
+    $(el).fadeIn(600);
+  })
+
+
+  var flashMovie=getFlashMovieObject("dancePlayer");
+  
+  $("#play").click(function() {
+    //console.log('play');
+    flashMovie.asPlay();
+    $("#startMenu").fadeOut("fast");
+    $("#user-block").slideDown("slow");
+  });
+
+  $(".voting").click(function(){
+    flashMovie.asVote();
+    showBtns();
+  });
+
+  // Auto Play
+  //console.log("Auto Play",flashvars.autoplay)
+  if(flashvars.autoplay == true){
+    flashMovie.asPlay();  
+    $("#user-block").slideDown("slow");
+
+  }else{
+    $('#startMenu').each(function(i, el){
+      $(el).fadeIn(600);
+    })
+  };
+
+  
+  $("#playAgain").click(function() {
+    //console.log('playAgain');
+    flashMovie.asReplay();
+    hideMenu();
+    $(".vote-count").fadeOut("fast");
+  });
+  function getFlashMovieObject(movieName){
+    if (window.document[movieName]){
+      return window.document[movieName];
+    }
+    if (navigator.appName.indexOf("Microsoft Internet")==-1){
+      if (document.embeds && document.embeds[movieName])
+        return document.embeds[movieName];
+    }
+    else{
+      return document.getElementById(movieName);
+    }
+  }
+  function hideMenu(){
+    $("#endMenu").fadeOut("fast");
+  }
+};
+</script>
+
+
+
+<div class="media-player">
+  
+  <!-- controlls -->
+  <div class="media-controls">
+   
+    <div id="startMenu" style="display:none;">
+      <div id="play" class="primary-btn play-btn-icon"><%= t :start_battle %></div>
+      <div id="rec" class="primary-btn rec-btn-icon">
+        <%= link_to :controller => "home", :action => "createvideo" do
+          t :auth_record_moves
+        end %>
+      </div>
+    </div>
+    
+    <div id="endMenu" style="display:none;">
+      <%#= link_to(
+        "Reload", home_reloadbattle_path(:format => 'js',:autoplay => 'true'),
+        {:class => 'primary-btn stnb-btn-icon',:id => 'next',:disable_with => 'reloading',:remote => true}
+      ) %>
+      <a href="/home/reloadbattle/true/true.js" class="primary-btn stnb-btn-icon" data-disable-with="reloading" data-remote="true" id="next"><%=t :reload %></a>
+      <a href="#" class="share-btns fb-btn" onclick="postToFeed(); return false;"><%= t :facebook_share_battle_title %></a>
+      <a onclick="postTweet(); return false;" href="//twitter.com/intent/tweet?text=<%= t :twitter_battle_copy %>&url=https://dc3danceoff.com/vid/<%=videos[0].id%>/<%=videos[1].id%>&hashtags=<%= t :twitter_hash %>" class="share-btns tw-btn"><%= t :facebook_share_battle_title %></a>
+      <div id="playAgain" class="primary-btn rtb-btn-icon"><%= t :player_replay %></div>
+    </div>      
+  </div>
+</div>

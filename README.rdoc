@@ -1,0 +1,13 @@
+== application tabs
+
+Xbox en_US
+http://www.facebook.com/dialog/pagetab?app_id=152421928236113&next=https://dc3danceoff.com/tab/xbox/en_US
+following this link will ask you to select which page the app goes on
+
+Xbox en_GB
+http://www.facebook.com/dialog/pagetab?app_id=373702176038674&next=https://dc3danceoff.com/tab/xbox/en_GB
+following this link will ask you to select which page the app goes on
+
+Xbox fr_FR
+http://www.facebook.com/dialog/pagetab?app_id=570642049618380&next=https://dc3danceoff.com/tab/xbox/fr_FR
+following this link will ask you to select which page the app goes on

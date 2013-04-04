@@ -1,0 +1,6 @@
+<script id="user" type="text/html">
+  <li>
+    <h2><%= link_to "#{t :your_videos}", home_ajaxmyvideos_path(:format => 'js'), :remote => true, :class => 'reload_action', :disable_with => "#{t :reloading}" %></h2>
+    <div id="ajaxmyvideos" class="video-list"></div>     
+  </li>
+</script>

@@ -1,0 +1,172 @@
+
+
+<script type="text/javascript" src="swfobject.js"></script>
+  <script type="text/javascript">
+  var flashvars = {
+  };
+  flashvars.track = <%=tid%>;
+
+  var params = {
+    menu: "false",
+    allowscriptaccess: "always",
+    wmode: "transparent"
+  };
+  var attributes = {
+    id: "camRecorder",
+    name: "camRecorder"
+  };
+
+  swfobject.embedSWF("/webcam/rec_recorder.swf", "vidHolder", "940", "370", "9.0.0","/webcam/expressInstall.swf", flashvars, params, attributes);
+</script>
+
+  <div id="playerContainer">
+    <div class="player">
+      <div id="vidMenu" style="display:none;">
+        <div id="playAgain"><a href="#" class="primary-btn play-btn-icon"><%= t :preview_your_video %></a></div>
+        <div id="reRec"><a href="#" onclick="_gaq.push(['_trackEvent', 'Upload', 'Re-record']);" class="primary-btn rec-btn-icon"><%= t :record_again %></a></div>
+        <div id="reset"><a href="#" onclick="_gaq.push(['_trackEvent', 'Upload', 'Choose New Song']);" class="primary-btn music-btn-icon"><%= t :choose_new_song %></a></div>
+        <div id="submit"><a href="#" class="primary-btn submit-btn"><%= t :submit_text %></a></div>
+      </div>
+      
+      <p class="pre-record-info"><%= t :pre_record_info %></p>
+
+      <a href="#" id="rec" style="display:none;" onclick="_gaq.push(['_trackEvent', 'Upload', 'Record']);" class="primary-btn rec-btn-icon-moves"><%= t :record_your_moves_now %></a>
+      <a href="#" id="skip_preview" style="display:none;" class="primary-btn skip-btn-icon"><%= t :skip_preview %></a>
+      <div id="vidHolder-wrapper"><div id="vidHolder"></div></div>
+
+    </div>
+  </div>
+  
+  <script type="text/javascript">
+    
+    $(function(){
+      
+      $('#reset a').live("click", function(e){
+        e.preventDefault();
+        initReset();
+      })
+    })
+
+    function logVidId(vidId){
+      console.log('saving video id: ',vidId);
+      
+      //$('#reset').remove();
+
+      $.post("/webcam/submit", {
+        'authenticity_token' : '<%= form_authenticity_token %>',
+        'video_id': vidId,
+        'track_id': <%=tid%>
+      });
+
+      $.ajax({
+        type: 'GET',
+        beforeSend: function(xhr,settings){
+          xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+          //console.log('---- presend ----')
+        },
+        url: "/home/thanks.js/",
+        complete: function(data){
+          // ich.user is undefined here
+          $('.player').html(data.responseText);
+        }
+      });
+    }
+      function showBtns(){
+        //console.log('show buttons');
+        $("#vidMenu").fadeIn("fast");
+        $('#skip_preview').fadeOut('fast');
+      }
+      
+      function camNum(camNums){
+        //console.log(camNums);
+        $.ajax({
+          type: 'GET',
+          beforeSend: function(xhr,settings){
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+            //console.log('---- presend ----')
+          },
+          url: "/webcam/nocamera/",
+          complete: function(data){
+            $('.player').html(data.responseText);
+          }
+        }); 
+      }      
+
+      function noCamera(){
+        //console.log('DENIED CAMERA BOZO!');
+        $.ajax({
+          type: 'GET',
+          beforeSend: function(xhr,settings){
+            xhr.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'))
+            //console.log('---- presend ----')
+          },
+          url: "/webcam/deniedcamera/",
+          complete: function(data){
+            $('#playerContainer').html(data.responseText);
+          }
+        });        
+      }
+
+      
+      function flashIsReady(){
+        //console.log('flash is ready');
+        var flashMovie=getFlashMovieObject("camRecorder");
+        
+        $('#vidHolder-wrapper').css('height', '375px');
+
+        $('.pre-record-info').fadeOut('slow', function(){
+          $('#rec').fadeIn('slow');
+        });
+
+        $("#rec").click(function() {
+          //console.log('record');
+          flashMovie.asRecord();
+          $("#rec").fadeOut("fast");
+        });
+        
+        
+        $("#playAgain").click(function() {
+          //console.log('playAgain');
+          flashMovie.asPlayBack();
+          hideMenu();
+          $('#skip_preview').fadeIn('fast');
+        });
+
+        $("#skip_preview").click(function() {
+          //console.log('skipped preview');
+          flashMovie.asPause();
+          $("#vidMenu").fadeIn("fast");
+          $('#skip_preview').fadeOut('fast');
+        });
+        
+        $("#reRec").click(function() {
+          //console.log('re-record');
+          flashMovie.asReRec();
+          hideMenu();
+        });
+        
+        $("#submit").click(function() {
+          //console.log('submit video');
+          flashMovie.asSubmit();
+          hideMenu();
+        });
+        
+        function getFlashMovieObject(movieName){
+          if (window.document[movieName]){
+            return window.document[movieName];
+          }
+          if (navigator.appName.indexOf("Microsoft Internet")==-1){
+            if (document.embeds && document.embeds[movieName])
+              return document.embeds[movieName];
+          }
+          else{
+            return document.getElementById(movieName);
+          }
+        }
+        
+        function hideMenu(){
+          $("#vidMenu").fadeOut("fast");
+        }
+      };   
+  </script>
+

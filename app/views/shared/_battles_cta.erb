@@ -1,0 +1,6 @@
+
+<%if session[:locale] %>
+  <%=render :partial => "locale/prizes_#{session[:locale]}"%>
+<%else %>
+  <%=render :partial => "locale/prizes_en_US"%>
+<%end %>

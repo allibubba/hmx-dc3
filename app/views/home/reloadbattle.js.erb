@@ -1,0 +1,4 @@
+$("#load_battle").html("<%= escape_javascript(render :partial => 'shared/videobattle', :layout => false, :locals => { :auto_play => @auto_play, :videos => @battle, :flag => true })%>");
+
+$("#user-block .user-block:odd").addClass('user-block-right');
+$("#user-block .user-block:even").addClass('user-block-left');

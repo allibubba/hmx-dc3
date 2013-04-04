@@ -1,0 +1,95 @@
+<div id="main">
+  <header class="full-width">
+    <div class="inner-wrap">
+      <h1><%=t :cta_logo_title %></h1>
+      <h2><span></span><%=t :cta_logo_caption %></h2>
+      <div id="video-container">
+        <%= image_tag('mobile/header-video.jpg', :class => 'video-overlay', :data => {:vid_id => "dEDnQg9Apxs", :player => "ytplayer"}, :width => '284', :height => '182') %>
+        <div id="ytplayer"></div>
+        <!-- <iframe width="284" height="182" src="https://www.youtube.com/embed/7tlA6LF4gCk?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+      </div>
+    </div>
+  </header>
+  <section id="share">
+    <h1><%=t :mobile_share_header %></h1>
+    <p><%=t :mobile_share_body %></p>
+    <a class="ribbon" href="mailto:" title=""><%=t :mobile_share_link %></a>
+    <div class="share-top">
+      <span><%=t :player_share %></span>
+      <%= render :partial => "shared/social" %>
+    </div>
+  </section>
+  <section id="featured" class="full-width">
+    <div class="inner-wrap">
+      <h1><%=t :mobile_featured_header %></h1>
+      <div id="video-container" class="video-overlay" data-vid-id="hCf0QmL50rg" data-player="ytplayer2">
+        <%= image_tag('mobile/featured-overlay.jpg', :width => '284', :height => '184') %>
+        <p id="play-btn"><span></span><%=t :mobile_featured_video %></p>
+        <!-- <iframe id="battle-vid" width="284" height="182" src="https://www.youtube.com/embed/7tlA6LF4gCk?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+      </div>
+      <div id="ytplayer2"></div>
+      <h2><%=t :mobile_featured_sub_header %></h2>
+      <p><%=t :mobile_featured_body %></p>
+      <p><%=t :mobile_featured_body2 %></p>
+    </div>
+  </section>
+  <section id="cta">
+    <a class="ribbon" href="" title=""><%=t :mobile_cta_learn_link %></a>
+    <a class="learn" href="#" title=""><%=t :mobile_cta_learn_link2 %> &gt;</a>
+    <div>
+      <span></span>
+      <a class="button" href="" title=""><span><%=t :mobile_cta_learn_link3 %></span></a>
+      <a class="button" href="" title=""><span><%=t :mobile_cta_learn_link4 %></span></a>
+    </div>
+  </section>
+  <section id="sponsors" class="full-width">
+    <div class="inner-wrap">
+      <%= image_tag('mobile/logo-esrb.jpg', :id => 'rating', :size => '119x53') %>
+
+      <a id="harmonix" href="" title="harmonix">harmonix</a>
+      <a id="xbox-360" href="" title="xbox 360">xbox 360</a>
+      <a id="kinect" href="" title="kinect xbox 360">kinect</a>
+      <a id="live" href="" title="xbox live">xbox live</a>
+      <p>&copy; <%=t :legal_copy %></p>
+    </div>
+  </section>
+  <footer class="full-width">
+    <div class="inner-wrap">
+      <a href="#" class="overlay-link" data-link="#rules" title=""><%=t :rules %></a>
+      <a href="#" class="overlay-link" data-link="#faq" title="<%=t :faq_title %>"><%=t :faq %></a>
+      <a href="" title=""><%=t :privacy %></a>
+      <a href="" class="last" title=""><%=t :terms %></a>
+      <form action="select" method="" accept-charset="utf-8">
+        <select name="" multiple>
+          <option value=""></option>
+        </select>
+      </form>
+    </div>
+  </footer>
+</div>
+  <section id="rules" class="overlay">
+    <a class="back" href="#" title="">&laquo; <%=t :back %></a>
+    <h1><%=t :rules %></h1>
+    <h2> <%=t :rules_header %></h2>
+    <p><%=t :rules_copy %></p>
+    <h2> <%=t :rules_header %></h2>
+    <p><%=t :rules_copy %></p>
+    <h2> <%=t :rules_header %></h2>
+    <p><%=t :rules_copy %></p>
+    <h2> <%=t :rules_header %></h2>
+    <p><%=t :rules_copy %></p>
+  </section>
+  <section id="faq" class="overlay">
+    <a class="back" href="#" title="">&laquo; <%=t :back %></a>
+    <h1><%=t :faq_title %></h1>
+    <h2><%=t :faq_header %></h2>
+    <p><%=t :faq_copy %></p>
+    <h2><%=t :faq_header %></h2>
+    <p><%=t :faq_copy %></p>
+    <h2><%=t :faq_header %></h2>
+    <p><%=t :faq_copy %></p>
+    <h2><%=t :faq_header %></h2>
+    <p><%=t :faq_copy %></p>
+    <h2><%=t :faq_header %></h2>
+    <p><%=t :faq_copy %></p>
+  </section>

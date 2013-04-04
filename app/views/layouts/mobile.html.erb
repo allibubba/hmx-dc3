@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html id="<%= session[:locale] %>">
+<head>
+  <title>DC3 | <%= t :meta_title %></title>
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,initial-scale=1.0">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <% if session[:mobile_ipad] %>
+    <%= stylesheet_link_tag    "tablet", :media => "all" %>
+  <% else %>
+    <%= stylesheet_link_tag    "mobile", :media => "all" %>
+  <% end %>
+  <!-- js -->
+  <script>
+    var _gaq = _gaq || []; //make sure i can set tracking event before google loads
+  </script>
+  <%= javascript_include_tag "mobile" %>
+  <!-- jQuery -->
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js' %>
+  <%= javascript_include_tag 'https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.6/jquery-ui.min.js' %>
+  <!-- /jQuery -->
+  <%= javascript_include_tag "//www.youtube.com/iframe_api" %>
+  <%= javascript_include_tag "uniform" %>
+  <%= csrf_meta_tags %>
+
+
+</head>
+
+<!-- FBUK! -->
+<div id="fb-root"></div>
+
+<script>
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=152421928236113";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+
+  //google analytics
+  // var _gaq = _gaq || []; //i put this in the head
+  _gaq.push(['_setAccount', 'UA-35532087-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+  var CLIENT_ID = '<%=CLIENT_ID%>'
+  var vote_win = '<%=t :vote_win %>'
+  var vote_lose = '<%=t :vote_lose%>'
+
+</script>
+<%= yield %>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+@import "bourbon";
+#en_GB {
+
+// Prizes
+section[role="prizes"] {
+  aside{
+    padding: 60px 10px 15px 220px;
+    text-align: left;
+    width: 230px;
+    &> p {
+      padding: 0;
+    }
+  }
+  .prize-two, .prize-three {
+    background-position: left;
+  }
+  .prize-three {
+    padding-left: 240px;
+  }
+}
+
+
+// Footer 
+footer .logos { padding-top: 35px; }
+
+}

@@ -1,0 +1,44 @@
+fr_FR:
+  #social approved
+  social_approved_message: "Regardez mes mouvements ! Ma vidéo vient d'être admise au concours Dance Central 3 Dance Off. Regardez-moi rivaliser et votez pour que je gagne !dc3danceoff.com"
+  social_approved_description: "Vous êtes prêt à défier d’autres danseurs sur le dancefloor ?  Envoyez une vidéo de votre plus belle performance sur Dance Central 3 et vous aurez peut-être la chance de remporter de super prix en participant au concours Dance Central 3."
+  social_approved_name: "Classement PEGI : 12+"
+  
+  activemodel:
+    attributes:
+      locale:
+        en_US: "Anglais"
+        en_GB: "Anglais britannique"
+        fr_FR: "Français"
+        en_IN: "Inde"
+  activerecord:
+    models:
+      user: Utilisateur
+      video: Vidéo
+    attributes:
+      video:
+        title: "Titre"
+        user_id: "ID de l'utilisateur"
+        status: "Statut"
+        votes_count: "Décompte des votes"
+        track_id: "ID de la piste"
+        video_id: "ID de la vidéo"
+        message: "Regardez les vidéos des meilleurs danseurs du concours Dance Central 3. Votez pour votre candidat favori et enregistrez vos propres pas de danse pour avoir une chance de gagner le premier prix!"
+        message_create: "vient d'envoyer sa vidéo dans le cadre du concours Dance Central 3 Dance Off ! dc3danceoff.com"
+        name: "CONCOURS DANCE CENTRAL 3 DANCE OFF"
+        description: "les mouvements de danse viennent d'être admis au concours Dance Central 3 Dance Off. Vous pensez avoir toutes vos chances ? Téléchargez votre propre bataille !!"
+        description_create: "Vous êtes prêt à défier les autres sur le dancefloor ? Faites-nous parvenir une vidéo de votre plus belle performance sur Dance Central et vous aurez peut-être la chance de remporter de super prix en participant au concours Dance Central 3!"
+        caption: "Classement PEGI : 12+"
+      user:
+        name_first: "Prénom"
+        name_last: "Nom de famille"
+        email: "Adresse électronique"
+        fb_id: "ID Facebook"
+        username: "Nom d'utilisateur"
+        banned: "Banni"
+    errors:
+      template:
+        header:
+          one:  "1 erreur empêche de sauvegarder ce %{model}"
+          other: "%{count} erreurs empêchent de sauvegarder ce %{model}"
+        body:  "Il y a eu de problèmes avec les champs suivants :"

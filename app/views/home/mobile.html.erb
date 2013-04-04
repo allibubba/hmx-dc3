@@ -1,0 +1,73 @@
+<%= render :partial => "shared/mobile_legal" %>
+<div id="main">
+  <header class="full-width">
+    <div class="inner-wrap">
+      <h1><%=t :cta_logo_title %></h1>
+      <h2><span></span><%=t :cta_logo_caption %></h2>
+      <div id="video-container">
+        <% if session[:mobile_ipad] %>
+          <%= image_tag('tablet/header-video.jpg', :class => 'video-overlay', :data => {:vid_id => "VFHcJxvI_t4", :player => "ytplayer"}, :size => '496x237') %>
+        <% else %>
+          <%= image_tag('mobile/header-video.jpg', :class => 'video-overlay', :data => {:vid_id => "VFHcJxvI_t4", :player => "ytplayer"}, :size => '284x182') %>
+        <% end %>
+        <div id="ytplayer"></div>
+        <!-- <iframe width="284" height="182" src="https://www.youtube.com/embed/7tlA6LF4gCk?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+      </div>
+    </div>
+  </header>
+  <section id="share">
+    <h1><%=t :mobile_share_header %></h1>
+    <p><%=t :mobile_share_body %></p>
+    <a class="ribbon" href="mailto:?subject=<%=t :mobile_email_subject %>&amp;body=<%=t :mobile_email_body %>"><%=t :mobile_share_link %></a>
+    <div class="share-top">
+      <span class="text"><%=t :share_text %></span>
+      <%= render :partial => 'shared/social' %>
+    </div>
+  </section>
+  <section id="featured" class="full-width">
+    <div class="inner-wrap">
+      <h1><%=t :mobile_featured_header %></h1>
+      <div id="video-container" class='video-overlay' data-vid-id="jGuXGp72M84" data-player="ytplayer2">
+        <% if session[:mobile_ipad] %>
+          <%= image_tag('tablet/featured-overlay2.png', :data => {:vid_id => "jGuXGp72M84", :player => "ytplayer2"}, :size => '496x237') %>
+        <% else %>
+          <%= image_tag('mobile/featured-overlay2.png', :data => {:vid_id => "jGuXGp72M84", :player => "ytplayer2"}, :size => '284x182') %>
+        <% end %>
+        <p id="play-btn"><span></span><%=t :mobile_featured_video %></p>
+        <!-- <iframe id="battle-vid" width="284" height="182" src="https://www.youtube.com/embed/7tlA6LF4gCk?showinfo=0" frameborder="0" allowfullscreen></iframe> -->
+      </div>
+      <div id="ytplayer2"></div>
+      <h2><%=t :mobile_featured_sub_header %></h2>
+      <p><%=t :mobile_featured_body %></p>
+      <p class="second"><%=t :mobile_featured_body2 %></p>
+    </div>
+  </section>
+  <section id="cta">
+    <a class="ribbon" href="http://www.xbox.com/en-US/live/smartglass" target="_blank"><%=t :mobile_cta_learn_link %></a>
+    <a class="learn" href="http://www.xbox.com/en-US/live/smartglass" target="_blank"><%=t :mobile_cta_learn_link2 %> &gt;</a>
+    <div>
+      <span></span>
+      <a class="button first" href="http://marketplace.xbox.com/en-US/Product/Dance-Central-3/66acd000-77fe-1000-9115-d802373307d9" target="_blank"><span><%=t :mobile_cta_learn_link3 %></span></a>
+      <a class="button" href="http://www.dancecentral.com/" target="_blank"><span><%=t :mobile_cta_learn_link4 %></span></a>
+    </div>
+  </section>
+  <section id="sponsors" class="full-width">
+    <div class="inner-wrap">
+      <a href="<%=t :rating_link %>" id="rating" title=""><%= image_tag("#{t :mobile_rating_image}", :size => '119x53') %></s>
+      <a id="smartglass" href="http://www.xbox.com/en-US/live/smartglass" target="_blank" title="smartglass">smartglass</a>
+      <a id="harmonix" href="http://www.harmonixmusic.com/" target="_blank" title="harmonix">harmonix</a>
+      <a id="xbox-360" href="http://www.xbox.com/Xbox360" target="_blank" title="xbox 360">xbox 360</a>
+      <a id="kinect" href="http://www.xbox.com/kinect" target="_blank" title="kinect xbox 360">kinect</a>
+      <a id="live" href="http://www.xbox.com/Live" target="_blank" title="xbox live">xbox live</a>
+      <p>&copy; <%=t :legal_copy %></p>
+    </div>
+  </section>
+  <footer class="full-width">
+    <div class="inner-wrap">
+      <a href="#" class="overlay-link first" data-link="#rules"><%=t :rules %></a>
+      <a href="#" class="overlay-link" data-link="#faq" title="<%=t :faq_title %>"><%=t :faq %></a>
+      <a href="http://privacy.microsoft.com/" target="_blank"><%=t :privacy %></a>
+      <a href="#" class="overlay-link" data-link="#terms"><%=t :terms %></a>
+    </div>
+  </footer>
+</div>

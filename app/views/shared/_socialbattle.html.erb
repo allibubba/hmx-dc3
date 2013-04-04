@@ -1,0 +1,10 @@
+<a href="https://twitter.com/share" 
+  class="twitter-share-button" 
+  data-url="<%=BASE_URL%>vid/<%=videos[0].id%>/<%=videos[1].id%>" 
+  data-text="<%= t :twitter_text %> <%=videos[0].user.name_first%> v.s. <%=videos[1].user.name_first%>" data-count="none" data-hashtags="<%= t :twitter_hash %>"><%= t :tweet %></a>
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+  <p><a onclick='postToFeed(); return false;'><%= t :facebook_share_battle_title %></a></p>
+
+

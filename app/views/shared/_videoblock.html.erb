@@ -1,0 +1,22 @@
+<div class="item">
+  <%=link_to(home_reloadbattle_path(:format => 'js', :video_id => video.id), {:remote => true, :class => 'reload_action_left imhover', :onclick => "_gaq.push(['_trackEvent', 'Dancers', 'Clicked', '#{generate_name(video)}']);"}) do %>
+    <div class="img-overlay">
+      <em><%= video.track.title %></em>
+    </div>
+    <img height="80" width="140" src="/media_thumbs/thumbapp_<%=video.media_id%>.png" />
+    <p class="user-name secondary-btn"><%=generate_name(video)%></p>
+  <%end%>
+  
+  <% case video.winner
+    when 3 %>
+     <p class="user-votes third">
+    <% when 2 %>
+     <p class="user-votes second">
+    <% when 1 %>
+     <p class="user-votes grand">
+    <% else %>
+     <p class="user-votes">
+    <% end %>
+    <%=video.votes_count%>
+  </p>
+</div>

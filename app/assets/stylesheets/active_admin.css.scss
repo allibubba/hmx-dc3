@@ -1,0 +1,29 @@
+// Active Admin CSS Styles
+@import "active_admin/mixins";
+@import "active_admin/base";
+
+// To customize the Active Admin interfaces, add your
+// styles here:
+video{margin:10px 20px;border:10px solid #ccc;}
+.status{color:#323537}
+.status_btn{
+  padding:10px 6px;
+  display:block;
+  width:200px;
+  text-align:center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  margin:10px 0;
+  font-weight:bold;
+  text-transform:uppercase;
+  color:#fff !IMPORTANT;
+}
+.deny_btn{
+  background-color:red;
+  border:2px solid #DE1900
+}
+.approve_btn{
+  background-color:green;
+  border:2px solid #035D00
+}

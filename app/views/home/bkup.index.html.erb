@@ -1,0 +1,65 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+
+<div id="load_battle" style="border-top:1px dotted #ccc;border-bottom:1px dotted #ccc;padding:8px 0">
+  <%=render :partial => "shared/videobattle", :locals => { :videos => @battle,:flag => false  } %>
+</div>
+
+<div  style="clear:both;" id="error"></div>
+
+<div  style="clear:both;">
+  <%= link_to "reload", home_reloadbattle_path(:format => 'js'), :remote => true, :class => 'reload_action', :disable_with => 'reloading...' %></div>
+
+<ul>
+  
+  <% cache do %>
+    <li style="width:175px;float:left;margin:5px;padding:10px;border:1px solid #ccc;">
+      <h3>latest</h3>
+      <%@list_latest.each do |video| %>
+        <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+      <%end%>
+    </li>  
+  <% end %>
+
+  <% cache do %>
+    <li style="width:175px;float:left;margin:5px;padding:10px;border:1px solid #ccc;">
+      <h3>oldest</h3>
+      <%@list_oldest.each do |video| %>
+        <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+      <%end%>
+    </li>
+  <% end %>
+
+  <% cache do %>
+    <li style="width:175px;float:left;margin:5px;padding:10px;border:1px solid #ccc;">
+      <h3>random</h3>
+      <%@list_random.each do |video| %>
+        <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+      <%end%>
+    </li>
+  <% end %>
+  
+  <!-- if there is a user and they have videos -->
+  <% cache do %>
+    <% if @user && @my_videos.count > 0%>
+      <li style="width:175px;float:left;margin:5px;padding:10px;border:1px solid #ccc;">
+        <h3>my videos</h3>
+        <%@my_videos.each do |video| %>
+          <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+        <%end%>
+      </li>
+    <% end %>
+  <% end %>
+
+  <% cache do %>
+    <% if @user && @friendvideos%>
+      <li style="width:175px;float:left;margin:5px;padding:10px;border:1px solid #ccc;">
+        <h3>friends</h3>
+        <%@friendvideos.each do |video| %>
+          <%=render :partial => "shared/videoblock", :locals => { :video => video }%>
+        <%end%>      
+      </li>
+    <% end %>
+  <% end %>
+</ul>
